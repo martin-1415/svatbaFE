@@ -1,0 +1,44 @@
+
+.hamburgerMenu {
+    display: inline-block;
+    cursor: pointer;
+    padding-right: 30px;
+}
+
+.bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: #333;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+/* css animation of hamburger menu*/
+
+.shownNav .bar1 {
+    animation: bar1Animation 0.5s ease-in-out forwards;
+}
+
+.shownNav .bar3 {
+    animation: bar3Animation 0.5s ease-in-out forwards;
+}
+
+@keyframes bar1Animation {
+    from {
+        transform: rotate(0deg) translate(0, 0);
+    }
+    to {
+        transform: rotate(-45deg) translate(-9px, 6px);
+    }
+}
+
+@keyframes bar3Animation {
+    from {
+        transform: rotate(0deg) translate(0, 0);
+    }
+    to {
+        transform: rotate(45deg) translate(-8px, -8px);
+    }
+}
+
+.shownNav .bar2 {opacity: 0;}
