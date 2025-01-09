@@ -36,5 +36,5 @@ jobs:
       # Step 5: Build and push Docker image
       - name: Build and Push Docker Image
         run: |
-          docker build -t ${{ secrets.DOCKERHUB_LOGIN }}/svatbaFE:latest .
-          docker push ${{ secrets.DOCKERHUB_PASS }}/svatbaFE:latest
+          docker build -t ${{ secrets.DOCKERHUB_LOGIN }}/svatba_fe:latest .
+          docker push ${{ secrets.DOCKERHUB_PASS }}/svatba_fe:latest
