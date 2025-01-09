@@ -1,0 +1,40 @@
+name: svatbaFE CI/CD
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-fe:
+    runs-on: ubuntu-22.04
+
+    steps:
+      # Step 1: Checkout the code
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Step 2: Set up Node.js environment
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      # Step 3: Install dependencies and build the Next.js app
+      - name: Install dependencies and build
+        run: |
+          npm install
+          npm run build
+
+      # Step 4: Log in to DockerHub
+      - name: Log in to DockerHub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKERHUB_LOGIN }}
+          password: ${{ secrets.DOCKERHUB_PASS }}
+
+      # Step 5: Build and push Docker image
+      - name: Build and Push Docker Image
+        run: |
+          docker build -t ${{ secrets.DOCKERHUB_LOGIN }}/svatbaFE:latest .
+          docker push ${{ secrets.DOCKERHUB_PASS }}/svatbaFE:latest
