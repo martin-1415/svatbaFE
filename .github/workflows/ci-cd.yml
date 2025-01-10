@@ -42,4 +42,4 @@ jobs:
       - name: Build and Push Docker Image
         run: |
           docker build -t ${{ secrets.DOCKERHUB_LOGIN }}/svatba:latest .
-          docker push ${{ secrets.DOCKERHUB_PASS }}/svatba:latest
+          docker push ${{ secrets.DOCKERHUB_LOGIN }}/svatba:latest
