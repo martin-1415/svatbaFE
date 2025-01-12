@@ -1,36 +1,73 @@
 "use client";
-import React, {useEffect, useState} from 'react';
 
-export default function Countdown() {
+import React, { useState, useEffect } from "react";
 
-    const calculateTimeLeft = () => {
-        const difference: number =  new Date('2025-08-09 09:00').getTime() - new Date().getTime();
-        if (difference > 0) {
-            return {
-                days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-                hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-                minutes: Math.floor((difference / 1000 / 60) % 60),
-                seconds: Math.floor((difference / 1000) % 60),
-            };
-        }
-        return null;
+const CountdownTimer = () => {
+  const targetDate = "2025-08-09 09:00";
+
+  const calculateTimeLeft = () => {
+    const difference: number =
+      new Date(targetDate).getTime() - new Date().getTime();
+    if (difference <= 0) {
+      return [0, 0, 0, 0];
     }
 
-    const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+    const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((difference / 1000 / 60) % 60);
+    const seconds = Math.floor((difference / 1000) % 60);
 
+    return [days, hours, minutes, seconds];
+  };
 
-    useEffect(() => {
-        const timer = setInterval(() => {
-            setTimeLeft(calculateTimeLeft());
-        }, 1000);
+  const formatTime = (time) => {
+    return time < 10 ? `0${time}` : `${time}`;
+  };
 
-        return () => clearInterval(timer); // Cleanup on component unmount
-    }, []);
+  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
 
-    return (
-        <div className="flex justify-center">
-                {timeLeft!.days}d {timeLeft!.hours}h {timeLeft!.minutes}m {timeLeft!.seconds}s
-        </div>
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setTimeLeft(calculateTimeLeft());
+    }, 1000);
 
-    );
-}
+    return () => clearInterval(timer);
+  }, [targetDate]);
+
+  return (
+    <div className="flex justify-center items-center">
+      {timeLeft.every((value) => value === 0) ? (
+        <span>Time's up!</span>
+      ) : (
+        <>
+          <div className="flex flex-col items-center w-32 h-24 mx-2 text-white bg-amber-600 shadow-md rounded-xl p-4">
+            <span className="text-3xl font-bold">
+              {formatTime(timeLeft[0])}
+            </span>
+            <span className="text-sm">Days</span>
+          </div>
+          <div className="flex flex-col items-center w-32 h-24 mx-2 text-white bg-amber-600 shadow-md rounded-xl p-4">
+            <span className="text-3xl font-bold">
+              {formatTime(timeLeft[1])}
+            </span>
+            <span className="text-sm">Hours</span>
+          </div>
+          <div className="flex flex-col items-center w-32 h-24 mx-2 text-white bg-amber-600 shadow-md rounded-xl p-4">
+            <span className="text-3xl font-bold">
+              {formatTime(timeLeft[2])}
+            </span>
+            <span className="text-sm">Minutes</span>
+          </div>
+          <div className="flex flex-col items-center w-32 h-24 mx-2 text-white bg-amber-600 shadow-md rounded-xl p-4">
+            <span className="text-3xl font-bold">
+              {formatTime(timeLeft[3])}
+            </span>
+            <span className="text-sm">Seconds</span>
+          </div>
+        </>
+      )}
+    </div>
+  );
+};
+
+export default CountdownTimer;

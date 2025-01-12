@@ -12,7 +12,13 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontFamily: {
+        dancing: "var(--font-dancing)",
+      },
     },
   },
-  plugins: [],
+  plugins: [require("daisyui")],
+  daisyui: {
+    themes: ["light", "dark", "black", "cupcake", "luxury"],
+  },
 } satisfies Config;
