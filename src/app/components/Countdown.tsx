@@ -20,7 +20,7 @@ const CountdownTimer = () => {
     return [days, hours, minutes, seconds];
   };
 
-  const formatTime = (time) => {
+  const formatTime = (time: number) => {
     return time < 10 ? `0${time}` : `${time}`;
   };
 
@@ -37,34 +37,34 @@ const CountdownTimer = () => {
   return (
     <div className="flex justify-center items-center">
       {timeLeft.every((value) => value === 0) ? (
-        <span>Time's up!</span>
+        <span>Time&#39;s up!</span>
       ) : (
-        <>
-          <div className="flex flex-col items-center w-32 h-24 mx-2 text-white bg-amber-600 shadow-md rounded-xl p-4">
+        <div className="flex flex-wrap justify-between">
+          <div className="flex flex-col items-center w-32 h-24 mx-2 text-white bg-amber-600 shadow-md rounded-xl p-4 m-1">
             <span className="text-3xl font-bold">
               {formatTime(timeLeft[0])}
             </span>
             <span className="text-sm">Days</span>
           </div>
-          <div className="flex flex-col items-center w-32 h-24 mx-2 text-white bg-amber-600 shadow-md rounded-xl p-4">
+          <div className="flex flex-col items-center w-32 h-24 mx-2 text-white bg-amber-600 shadow-md rounded-xl p-4 m-1">
             <span className="text-3xl font-bold">
               {formatTime(timeLeft[1])}
             </span>
             <span className="text-sm">Hours</span>
           </div>
-          <div className="flex flex-col items-center w-32 h-24 mx-2 text-white bg-amber-600 shadow-md rounded-xl p-4">
+          <div className="flex flex-col items-center w-32 h-24 mx-2 text-white bg-amber-600 shadow-md rounded-xl p-4 m-1">
             <span className="text-3xl font-bold">
               {formatTime(timeLeft[2])}
             </span>
             <span className="text-sm">Minutes</span>
           </div>
-          <div className="flex flex-col items-center w-32 h-24 mx-2 text-white bg-amber-600 shadow-md rounded-xl p-4">
+          <div className="flex flex-col items-center w-32 h-24 mx-2 text-white bg-amber-600 shadow-md rounded-xl p-4 m-1">
             <span className="text-3xl font-bold">
               {formatTime(timeLeft[3])}
             </span>
             <span className="text-sm">Seconds</span>
           </div>
-        </>
+        </div>
       )}
     </div>
   );

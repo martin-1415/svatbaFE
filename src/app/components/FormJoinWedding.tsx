@@ -1,6 +1,5 @@
 "use client";
 
-import axios from "axios";
 import { useState } from "react";
 
 export default function FormJoinWedding() {
@@ -13,7 +12,7 @@ export default function FormJoinWedding() {
 
   return (
     <div className="flex flex-col items-center space-y-10 py-10">
-      <h1 className="text-7xl font-light font-dancing">
+      <h1 className="text-7xl font-light font-dancing text-center m-4">
         We hope you can join us
       </h1>
       <div className="flex space-x-4">

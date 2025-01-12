@@ -1,11 +1,23 @@
-FROM node:19-bullseye
+# Base image
+FROM node:18-alpine
 
-WORKDIR /app
+# Set working directory
+WORKDIR /usr/src/app
 
+# Copy package.json and package-lock.json
+COPY package*.json ./
+
+# Install dependencies, ci for clear install
+RUN npm ci
+
+# Copy the rest of the application code
 COPY . .
 
-EXPOSE 4000 4000
-RUN npm install pm2@latest -g
+# Build the Next.js application
+RUN npm run build
 
-ENTRYPOINT ["PORT=4000 pm2 start npm --name svatbaFE -- start"]
+# Expose port 3000
+EXPOSE 3000
 
+# Start the Next.js application
+CMD ["npm", "run", "start"]

@@ -5,7 +5,7 @@ import FormJoinWedding from "@/app/components/FormJoinWedding";
 
 export default function Home() {
   return (
-    <main>
+    <main className="p-2">
       <section className="bg-base-100">
         <div className="relative w-full">
           <Image
@@ -36,7 +36,7 @@ export default function Home() {
       </section>
       <section>
         <div className="flex flex-col items-center space-y-10 my-10">
-          <h1 className="text-7xl font-light font-dancing">
+          <h1 className="text-7xl font-light font-dancing text-center">
             We are getting married
           </h1>
           <Countdown />
@@ -82,7 +82,7 @@ export default function Home() {
               </p>
             </div>
           </div>
-          <div className="flex flex-row items-start justify-center my-20 gap-40 w-full">
+          <div className="flex flex-wrap items-start justify-center my-20 gap-40 w-full">
             <div className="basis-1/2 flex flex-col justify-start space-y-4 text-center max-w-96">
               <div className="flex justify-center mb-10">
                 <Image
