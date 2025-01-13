@@ -13,7 +13,6 @@ export default function Home() {
             alt="Family Photo"
             width={1920}
             height={1080}
-            objectFit="contain"
             className="w-full"
           />
         </div>
@@ -61,7 +60,7 @@ export default function Home() {
         <div className="bg-white flex flex-col justify-center items-center">
           <div className="flex flex-col items-center -space-y-36">
             <div className="flex justify-center">
-              <img
+              <Image
                 src="/line-flowers.jpg"
                 alt="Decorative Flower"
                 className="opacity-30 max-w-sm "

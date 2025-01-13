@@ -6,10 +6,13 @@ const CountdownTimer = () => {
   const targetDate = "2025-08-09 09:00";
 
   const calculateTimeLeft = () => {
-    const difference: number =
-      new Date(targetDate).getTime() - new Date().getTime();
-    if (difference <= 0) {
-      return [0, 0, 0, 0];
+    let difference: number =0;
+    if (typeof window !== 'undefined') {
+      difference =
+          new Date(targetDate).getTime() - new Date().getTime();
+      if (difference <= 0) {
+        return [0, 0, 0, 0];
+      }
     }
 
     const days = Math.floor(difference / (1000 * 60 * 60 * 24));
