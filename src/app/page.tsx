@@ -9,7 +9,7 @@ export default function Home() {
       <section className="bg-base-100">
         <div className="relative w-full">
           <Image
-            src="/main.jpg"
+            src="/main2.jpg"
             alt="Family Photo"
             width={1920}
             height={1080}
@@ -62,8 +62,10 @@ export default function Home() {
             <div className="flex justify-center">
               <Image
                 src="/line-flowers.jpg"
+                width={150}
+                height={300}
                 alt="Decorative Flower"
-                className="opacity-30 max-w-sm "
+                className="opacity-30 max-w-sm w-auto"
               />
             </div>
             <div className="flex flex-col items-center text-center space-y-6 z-10">
@@ -81,8 +83,8 @@ export default function Home() {
               </p>
             </div>
           </div>
-          <div className="flex flex-wrap items-start justify-center my-20 gap-40 w-full">
-            <div className="basis-1/2 flex flex-col justify-start space-y-4 text-center max-w-96">
+          <div className="flex flex-wrap items-start justify-center my-20 gap-40 w-full" >
+            <div className="basis-1/2 flex flex-col justify-center space-y-4 text-center max-w-96   h-[100vh] sm:h-auto">
               <div className="flex justify-center mb-10">
                 <Image
                   src="/ceremony.png"
@@ -120,7 +122,7 @@ export default function Home() {
                 />
               </div>
             </div>
-            <div className="basis-1/2 flex flex-col justify-start space-y-4 text-center max-w-96">
+            <div className="basis-1/2 flex flex-col justify-start space-y-4 text-center max-w-96 h-[100vh] sm:h-auto">
               <div className="flex justify-center mb-10">
                 <Image
                   src="/celebration.png"
