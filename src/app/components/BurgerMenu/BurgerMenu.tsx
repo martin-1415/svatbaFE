@@ -12,7 +12,7 @@ export default function BurgerMenu() {
     };
 
     return (
-        <div className={`relative top-2 right-4 ${isActive ? 'shownNav' : ''}`}
+        <div className={` p-2 ${isActive ? 'shownNav' : ''}`}
              onClick={toggleClick}>
 
             <div className="bar1"></div>

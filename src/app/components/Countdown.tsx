@@ -39,25 +39,25 @@ const CountdownTimer = () => {
         <span>Time&#39;s up!</span>
       ) : (
         <div className="flex flex-wrap justify-between">
-          <div className="flex flex-col items-center w-32 h-24 mx-2 text-white bg-amber-600 shadow-md rounded-xl p-4 m-1">
+          <div className="flex flex-col items-center w-32 h-24 mx-2 text-white bg-fuchsia-900 shadow-md rounded-xl p-4 m-1">
             <div className="text-3xl font-bold">
               {formatTime(timeLeft[0])}
             </div>
             <div className="text-sm">Days</div>
           </div>
-          <div className="flex flex-col items-center w-32 h-24 mx-2 text-white bg-amber-600 shadow-md rounded-xl p-4 m-1">
+          <div className="flex flex-col items-center w-32 h-24 mx-2 text-white bg-fuchsia-900 shadow-md rounded-xl p-4 m-1">
             <div className="text-3xl font-bold">
               {formatTime(timeLeft[1])}
             </div>
             <div className="text-sm">Hours</div>
           </div>
-          <div className="flex flex-col items-center w-32 h-24 mx-2 text-white bg-amber-600 shadow-md rounded-xl p-4 m-1">
+          <div className="flex flex-col items-center w-32 h-24 mx-2 text-white bg-fuchsia-900 shadow-md rounded-xl p-4 m-1">
             <div className="text-3xl font-bold">
               {formatTime(timeLeft[2])}
             </div>
             <div className="text-sm">Minutes</div>
           </div>
-          <div className="flex flex-col items-center w-32 h-24 mx-2 text-white bg-amber-600 shadow-md rounded-xl p-4 m-1">
+          <div className="flex flex-col items-center w-32 h-24 mx-2 text-white bg-fuchsia-900 shadow-md rounded-xl p-4 m-1">
             <div className="text-3xl font-bold">
               {formatTime(timeLeft[3])}
             </div>

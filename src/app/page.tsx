@@ -1,59 +1,47 @@
 import Countdown from "@/app/components/Countdown";
 import Image from "next/image";
 import ButtonLocation from "@/app/components/ButtonLocation";
-import FormJoinWedding from "@/app/components/FormJoinWedding";
+import Navigation from "@/app/components/Navigation";
 
 export default function Home() {
   return (
-    <main className="p-2">
+    <main>
       <section className="bg-base-100">
+        <img src="/curlies.svg" alt="Icon" className="absolute top-2 left-2 z-10 w-1/2" />
+        <Navigation />
+        <div className="absolute z-10 top-14 font-dancing left-14 text-2xl">
+          Tak dlouho se hledali, až na sebe zbyli.
+        </div>
         <div className="relative w-full">
           <Image
-            src="/main2.jpg"
+            src="/galerie/title3.jpg"
             alt="Family Photo"
             width={1920}
             height={1080}
-            className="w-full"
+            className="w-full opacity-50"
           />
-        </div>
-      </section>
-      <section className=" bg-amber-900 text-white ">
-        <div className=" relative bg-amber-900 text-white flex flex-col items-center justify-center px-4 py-16 space-y-10 text-center">
-          <h1 className="text-8xl font-light font-dancing">Šárka</h1>
-          <div className="flex items-center w-1/2">
-            <div className="flex-grow border-t border-white "></div>
-            <span className="mx-4 text-4xl font-dancing">&</span>
-            <div className="flex-grow border-t border-white"></div>
+          <div className=" absolute bottom-0 w-full bg-violet-200 text-violet-900 flex flex-col items-center px-4 py-4 space-y-10 text-center">
+            <h1 className="text-4xl font-light font-dancing ">Šárka</h1>
+            <div className="flex items-center w-1/2">
+              <div className="flex-grow border-t border-violet-900 "></div>
+              <span className="mx-4 text-2xl font-dancing ">&</span>
+              <div className="flex-grow border-t border-violet-900 "></div>
+            </div>
+            <h1 className="text-4xl font-dancing">Martin</h1>
           </div>
-          <h1 className="text-8xl font-dancing ">Martin</h1>
 
-          <p className="text-xl max-w-6xl  px-20">
-            Vás srdečně zvou na svou svatbu, která se uskuteční 9. srpna 2025 v
-            09:00. Těšíme se, že s námi oslavíte tento výjimečný den.
-          </p>
         </div>
       </section>
+
       <section>
         <div className="flex flex-col items-center space-y-10 my-10">
-          <h1 className="text-7xl font-light font-dancing text-center">
-            We are getting married
+          <h1 className="text-7xl text-center">
+            <p className="text-xl  px-10">
+              Ahoj Pavle, srdečně tě zveme na naši svatbu, která se uskuteční 9. srpna 2025 v
+              09:00. Pokud se na tomto vyjímečném dnu setkáme, prosíme o vyplnění a odeslání následujícího dotazníku [Link].
+            </p>
           </h1>
           <Countdown />
-        </div>
-        <div>
-          <svg
-            data-name="Layer 1"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 1200 120"
-            className="w-full h-auto bg-amber-900"
-          >
-            <path
-              d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
-              //   fill="#f5f5f5"
-              // fill with white
-              fill="#fff"
-            />
-          </svg>
         </div>
       </section>
       <section className="bg-base-200">
@@ -163,9 +151,6 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
-      <section className="bg-amber-900 text-white">
-        <FormJoinWedding></FormJoinWedding>
       </section>
     </main>
   );
