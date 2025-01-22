@@ -31,7 +31,7 @@ jobs:
 
       - name: Push Docker Image
         run: |
-          docker push ${{ vars.DOCKER_LOGIN }}/svatba:latest
+          docker push ${{ vars.DOCKERHUB_LOGIN }}/svatba:latest
 
   deploy:
     needs: build
