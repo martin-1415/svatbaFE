@@ -7,9 +7,9 @@ export default function Home() {
   return (
     <main>
       <section className="bg-base-100">
-        <img src="/curlies.svg" alt="Icon" className="absolute top-2 left-2 z-10 w-1/2" />
+        <img src="/curlies.svg" alt="Icon" className="absolute top-2 left-2 z-10 w-1/2 opacity-50" />
         <Navigation />
-        <div className="absolute z-10 top-14 font-dancing left-14 text-2xl">
+        <div className="absolute z-10 top-14 font-dancing left-14 text-2xl m-2">
           Tak dlouho se hledali, až na sebe zbyli.
         </div>
         <div className="relative w-full">
