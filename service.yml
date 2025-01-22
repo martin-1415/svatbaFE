@@ -1,13 +1,59 @@
-apiVersion: v1
-kind: Service
-metadata:
-  name: nextjs-svatba
-spec:
-  type: NodePort
-  selector:
-    app: svatba-app
-  ports:
-    - protocol: TCP
-      port: 80          # Exposing the service on port 80 (common for HTTP traffic)
-      targetPort: 3000   # The port where the Next.js app listens inside the container
-      nodePort: 30000    # External access via <NodeIP>:30000
+kind: Service  # Specifies the type of Kubernetes resource as a Service
+apiVersion: v1  # Specifies the API version to use for the Service
+metadata:  # Contains metadata about the Service
+  name: svatba-fe  # The name of the Service
+  namespace: svatba-namespace  # The namespace in which the Service is deployed
+  labels:  # Labels to organize and select the Service
+    app: svatba-fe  # Label to identify application instances
+spec:  # Specification of the Service
+  ports:  # Defines the list of network ports exposed by the Service
+    - protocol: TCP  # The protocol used (TCP/UDP)
+      port: 4001  # The port on which the Service is exposed
+      targetPort: 4001  # The port on the container to forward traffic to
+  selector:  # Defines how to select the pods associated with the Service
+    app: svatba-fe  # Selects pods with the label "app: svatba-fe"
+  type: LoadBalancer #Service type to expose externally using a cloud provider load bal.
+  sessionAffinity: None  # Controls whether to maintain client session affinity
+  externalTrafficPolicy: Local  # (Cluster or Local) changes IPs or sending Clients IP
+  ipFamilies:  # Specifies the IP address family used by the Service
+    - IPv4  # Specifies IPv4 as the IP family (4,6 or both are available)
+  ipFamilyPolicy: SingleStack  # policy for handling IP families: 4, 6 or both
+  allocateLoadBalancerNodePorts: true  # allocate node ports for load balancer traffic
+  internalTrafficPolicy: Cluster  #how internal traffic is routed within the cluster
+---
+kind: Deployment  # Specifies the type of Kubernetes resource
+apiVersion: apps/v1  # Defines the API version for the Deployment
+metadata:  # Contains metadata about the Deployment
+  name: svatba-deployment  # Name of the Deployment
+  namespace: svatba-namespace  # Namespace where the Deployment is created
+  labels:  # Key-value pairs for identifying the Deployment
+    app: svatba-fe  # Label to identify application
+spec:  # Specification of the Deployment
+  replicas: 1  # Number of desired pod replicas
+  selector:  # Criteria for selecting pods
+    matchLabels:
+      app: svatba-fe  # Select pods with matching label
+  template:  # Pod template for creating replicas
+    metadata:
+      labels:
+        app: svatba-fe  # Label to match with selector
+    spec:
+      containers:  # List of containers within the pod
+        - name: svatba  # Name of the container
+          image: docker4asinkan/svatba:latest  # Docker image to use
+          resources: {}  # Resource limits and requests
+          terminationMessagePath: /dev/termination-log  # Path for termination messages
+          terminationMessagePolicy: File  # Policy for storing termination messages
+          imagePullPolicy: Always  # Always pull the latest image
+      restartPolicy: Always  # Restart policy for the pod
+      terminationGracePeriodSeconds: 30  # Time to wait before forcefully terminating
+      dnsPolicy: ClusterFirst  # Default DNS policy
+      securityContext: {}  # Pod security. who car start is etc.
+      schedulerName: default-scheduler  # Scheduler used for the pod
+  strategy:  # Deployment strategy
+    type: RollingUpdate  # Rolling update deployment strategy
+    rollingUpdate:
+      maxUnavailable: 33%  # Max unavailable replicas during update
+      maxSurge: 33%  # Max new replicas above desired number
+  revisionHistoryLimit: 3  # Number of old replicasets to keep
+  progressDeadlineSeconds: 600  # Time to wait before considering deployment failed
