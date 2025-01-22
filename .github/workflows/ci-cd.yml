@@ -19,8 +19,8 @@ jobs:
       - name: Log in to Docker Hub
         uses: docker/login-action@v3
         with:
-          username: ${{ vars.DOCKER_LOGIN }}
-          password: ${{ secrets.DOCKER_PASSWORD }}
+          username: ${{ vars.DOCKERHUB_LOGIN }}
+          password: ${{ secrets.DOCKERHUB_PASSWORD }}
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
@@ -45,7 +45,7 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_PASS }}
           script: |
-            docker pull ${{ vars.DOCKER_LOGIN }}/svatba:latest
+            docker pull ${{ vars.DOCKERHUB_LOGIN }}/svatba:latest
             docker stop svatba || true
             docker rm svatba || true
-            docker run -d --net=host --name svatba ${{ vars.DOCKER_LOGIN }}/svatba:latest
+            docker run -d --net=host --name svatba ${{ vars.DOCKERHUB_LOGIN }}/svatba:latest
