@@ -7,7 +7,7 @@ const nextConfig: NextConfig = {
 
 module.exports = {
     images: {
-        unoptimized: true, // in case of static sites
+        // unoptimized: true, // in case of static sites
     },
     serverRuntimeConfig: {
         host: '0.0.0.0',
