@@ -43,7 +43,7 @@ jobs:
         with:
           host: ${{ secrets.SSH_IP }}
           username: ${{ secrets.SSH_USER }}
-          key: ${{ secrets.SSH_PASS }}
+          password: ${{ secrets.SSH_PASS }}
           script: |
             docker pull ${{ vars.DOCKERHUB_LOGIN }}/svatba:latest
             docker stop svatba || true
