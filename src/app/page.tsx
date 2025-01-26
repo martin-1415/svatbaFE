@@ -1,14 +1,14 @@
 import Countdown from "@/app/components/Countdown";
 import Image from "next/image";
 import ButtonLocation from "@/app/components/ButtonLocation";
-import Navigation from "@/app/components/Navigation";
 
 export default function Home() {
+
   return (
-    <main>
+    <div>
       <section className="bg-base-100">
         <img src="/curlies.svg" alt="Icon" className="absolute top-2 left-2 z-10 w-1/2 opacity-50" />
-        <Navigation />
+
         <div className="absolute z-10 top-14 font-dancing left-14 text-2xl m-2">
           Tak dlouho se hledali, až na sebe zbyli.
         </div>
@@ -152,6 +152,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-    </main>
+    </div>
   );
 }
