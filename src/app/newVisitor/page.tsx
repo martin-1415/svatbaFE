@@ -7,11 +7,12 @@ export default function Page() {
     async function onSubmit(event: FormEvent<HTMLFormElement>) {
         event.preventDefault()
 
-        const apiUrl:string|undefined = process.env.NEXT_PUBLIC_API_URL;
+        const apiUrl:string = process.env.NEXT_PUBLIC_API_URL!;
         const formData = new FormData(event.currentTarget)
 
         // try {
-            const response: Response = await fetch(apiUrl!.concat("/newVisitor"), {
+            console.log(apiUrl.concat("/newVisitor"));
+            const response: Response = await fetch(apiUrl.concat("/newVisitor"), {
                 method: 'POST',
                 body: formData,
             })
