@@ -19,12 +19,11 @@ export default function Page() {
             if (!response.ok) {
                 throw new Error(`Response status: ${response.status}`);
             }
-            console.log('jede');
-            const json = await response.json();
-            console.log(json);
-            } catch{
-                console.error("Saving visitor failed.");
-            }
+            // const json = await response.json();
+            // console.log(json);
+        } catch{
+            console.error("Saving visitor failed.");
+        }
 
         // Handle response if necessary
         //const data = await response.json()
@@ -32,16 +31,16 @@ export default function Page() {
     }
 
     return (
-        <Form action="/search" className="p-6" onSubmit={onSubmit}>
-            <div>
+        <form  className="p-6" onSubmit={onSubmit}>
+            <div className="m-2">
                 <input name="name"/>
                 <label htmlFor="name"> Jmeno</label>
             </div>
-            <div>
+            <div className="m-2">
                 <input name="welcomeMessage"/>
                 <label htmlFor="welcomeMessage ">Uvitaci zprava</label>
             </div>
             <button type="submit" className="bg-blue-500 text-white rounded-md px-2 py-1">Submit</button>
-         </Form>
+         </form>
     )
 }
