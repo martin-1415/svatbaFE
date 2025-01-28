@@ -1,6 +1,5 @@
 "use client";
 
-import Form from 'next/form'
 import { FormEvent } from 'react'
 
 export default function Page() {
