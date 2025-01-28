@@ -10,7 +10,7 @@ export default function Page() {
         const apiUrl:string|undefined = process.env.NEXT_PUBLIC_API_URL;
         const formData = new FormData(event.currentTarget)
 
-        try {
+        // try {
             const response: Response = await fetch(apiUrl!.concat("/newVisitor"), {
                 method: 'POST',
                 body: formData,
@@ -20,9 +20,9 @@ export default function Page() {
             }
             // const json = await response.json();
             // console.log(json);
-        } catch{
-            console.error("Saving visitor failed.");
-        }
+        // } catch{
+        //     console.error("Saving visitor failed:" + response.toString());
+        // }
 
         // Handle response if necessary
         //const data = await response.json()
