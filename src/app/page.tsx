@@ -1,8 +1,56 @@
+"use client";
+
 import Countdown from "@/app/components/Countdown";
 import Image from "next/image";
 import ButtonLocation from "@/app/components/ButtonLocation";
+import {useEffect, useState} from "react";
+import {VisitorI} from "@/app/model/VisitorI";
 
 export default function Home() {
+  const [id, setId] = useState<string>("");
+  const [visitor, setVisitor] = useState<VisitorI | null>();
+
+  useEffect(() => {
+    // saving and loading Visitor ID
+    const searchParams = new URLSearchParams(window.location.search);
+    let load_id: string | null = localStorage.getItem("svatba825_id");
+
+    if (load_id) {
+      setId(load_id);
+    } else {
+      load_id = searchParams.get("id");
+      if (typeof load_id === "string") {
+        localStorage.setItem("svatba825_id", load_id);
+      }
+    }
+    if (load_id) {
+      setId(load_id);
+    }
+  }, []);
+
+  useEffect(() => {
+    // load visitor details
+    const fetchData = async () => {
+      try {
+        if(id) {
+          const params = new URLSearchParams({id: id});
+          const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL!.concat("/getOne")}?${params.toString()}`, {
+            method: "GET",
+            headers: {
+              "Content-Type": "application/json"
+            }
+          });
+          const visitor: VisitorI= await response.json();
+          console.log(visitor);
+          setVisitor(visitor);
+        }
+      } catch (error) {
+        console.error("Error fetching visitor data:", error);
+      }
+    }
+    fetchData();
+
+  }, [id]);
 
   return (
     <div>
@@ -37,7 +85,7 @@ export default function Home() {
         <div className="flex flex-col items-center space-y-10 my-10">
           <h1 className="text-7xl text-center">
             <p className="text-xl  px-10">
-              Ahoj Pavle, srdečně tě zveme na naši svatbu, která se uskuteční 9. srpna 2025 v
+              {visitor?.welcomeMessage} zveme na naši svatbu, která se uskuteční 9. srpna 2025 v
               09:00. Pokud se na tomto vyjímečném dnu setkáme, prosíme o vyplnění a odeslání následujícího dotazníku [Link].
             </p>
           </h1>

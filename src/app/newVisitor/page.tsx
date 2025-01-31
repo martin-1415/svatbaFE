@@ -12,7 +12,6 @@ export default function Page() {
             try {
                 const response = await fetch(process.env.NEXT_PUBLIC_API_URL!.concat('/getAll'));
                 const list:VisitorI[] = await response.json();
-                console.log(list);
                 setData(list);
             } catch (error) {
                 console.error("Error fetching data:", error);
