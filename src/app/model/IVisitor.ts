@@ -1,4 +1,4 @@
-export interface VisitorI {
+export interface IVisitor {
     _id: {$oid:string};
     name: string;
     welcomeMessage: string;

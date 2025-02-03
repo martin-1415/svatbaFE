@@ -1,13 +1,20 @@
 "use client";
 
-import {FormEvent} from "react";
+import {FormEvent, useEffect, useState} from "react";
+import {IVisitor} from "@/app/model/IVisitor";
 
-interface IdProps{
-  id:string;
+interface VisitorProps{
+  visitor:IVisitor | undefined;
 }
 
-export default function FormJoinWedding({ id }:IdProps ) {
+export default function FormJoinWedding({ visitor }:VisitorProps ) {
+  const [ppl, setPpl] = useState<number | string>('');
+  const [children, setChildren] = useState<number| string>('');
 
+    useEffect(() => {
+        setChildren(visitor?.weddingForm.children ?? '');
+        setPpl(visitor?.weddingForm.ppl ?? '');
+    },[visitor]);
 
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
     //event.preventDefault()
@@ -42,11 +49,12 @@ export default function FormJoinWedding({ id }:IdProps ) {
         <div className="m-2">
           <label htmlFor="numberOfPpl">Počet dospělých</label>
           <input
-              id="ppl"
+              value={ppl === undefined ? '' : ppl}
               name="ppl"
               type="number"
               min="0"
               step="1"
+              onChange={e => setPpl(parseInt(e.target.value, 10))}
               onInput={(e: React.FormEvent<HTMLInputElement>) => {
                 const input = e.target as HTMLInputElement;
                 // Remove any non-digit characters
@@ -58,11 +66,12 @@ export default function FormJoinWedding({ id }:IdProps ) {
         <div className="m-2">
           <label htmlFor="numberOfChildren">Počet dětí</label>
           <input
-              id="children"
+              value={children === undefined ? '' : children}
               name="children"
               type="number"
               min="0"
               step="1"
+              onChange={e => setChildren(parseInt(e.target.value, 10))}
               onInput={(e: React.FormEvent<HTMLInputElement>) => {
                 const input = e.target as HTMLInputElement;
                 // Remove any non-digit characters
@@ -71,17 +80,17 @@ export default function FormJoinWedding({ id }:IdProps ) {
           />
         </div>
 
-        <div className="m-2">
-          <input id="ceremony" name="ceremony" type="checkbox"/>
-          <label htmlFor="ceremony">Účast na obřadu</label>
-        </div>
+        {/*<div className="m-2">*/}
+        {/*  <input id="ceremony" name="ceremony" type="checkbox"/>*/}
+        {/*  <label htmlFor="ceremony">Účast na obřadu</label>*/}
+        {/*</div>*/}
 
-        <div className="m-2">
-          <input id="party" name="party" type="checkbox"/>
-          <label htmlFor="party">Účast na oslavě</label>
-        </div>
+        {/*<div className="m-2">*/}
+        {/*  <input id="party" name="party" type="checkbox"/>*/}
+        {/*  <label htmlFor="party">Účast na oslavě</label>*/}
+        {/*</div>*/}
 
-        <input type="hidden" name="id" value={id}/>
+        {/*<input type="hidden" name="id" value={visitor?._id.$oid}/>*/}
 
         <div className="m-2 flex gap-4">
           <button

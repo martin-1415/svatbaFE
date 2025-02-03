@@ -2,16 +2,16 @@
 
 import { FormEvent } from 'react'
 import { useEffect, useState } from "react";
-import {VisitorI} from "../model/VisitorI";
+import {IVisitor} from "../model/IVisitor";
 
 export default function Page() {
-    const [listOfVisitors, setData] = useState< VisitorI[] | null>(null);
+    const [listOfVisitors, setData] = useState< IVisitor[] | null>(null);
 
     useEffect(() => {
         const fetchData = async () => {
             try {
                 const response = await fetch(process.env.NEXT_PUBLIC_API_URL!.concat('/getAll'));
-                const list:VisitorI[] = await response.json();
+                const list:IVisitor[] = await response.json();
                 setData(list);
             } catch (error) {
                 console.error("Error fetching data:", error);

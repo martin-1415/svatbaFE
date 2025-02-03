@@ -4,18 +4,17 @@ import Countdown from "@/app/components/Countdown";
 import Image from "next/image";
 import ButtonLocation from "@/app/components/ButtonLocation";
 import {useEffect, useState} from "react";
-import {VisitorI} from "@/app/model/VisitorI";
+import {IVisitor} from "@/app/model/IVisitor";
 import FormJoinWedding from "@/app/components/FormJoinWedding";
 
 export default function Home() {
   const [id, setId] = useState<string>("");
-  const [visitor, setVisitor] = useState<VisitorI | null>();
+  const [visitor, setVisitor] = useState<IVisitor | undefined>();
 
   useEffect(() => {
     // saving and loading Visitor ID
     const searchParams = new URLSearchParams(window.location.search);
     let load_id: string | null = localStorage.getItem("svatba825_id");
-
     if (load_id) {
       setId(load_id);
     } else {
@@ -41,9 +40,8 @@ export default function Home() {
               "Content-Type": "application/json"
             }
           });
-          const visitor: VisitorI= await response.json();
+          const visitor: IVisitor= await response.json();
           setVisitor(visitor);
-          console.log(visitor);
         }
       } catch (error) {
         console.error("Error fetching visitor data:", error);
@@ -52,6 +50,7 @@ export default function Home() {
     fetchData();
 
   }, [id]);
+
 
   return (
     <div>
@@ -92,7 +91,7 @@ export default function Home() {
           </h1>
           <Countdown />
         </div>
-        <FormJoinWedding id={id} ></FormJoinWedding>
+        <FormJoinWedding visitor={visitor} ></FormJoinWedding>
       </section>
       <section className="bg-base-200">
         <div className="bg-white flex flex-col justify-center items-center">
