@@ -22,7 +22,7 @@ export default function Page() {
     }, []);
 
     async function onSubmit(event: FormEvent<HTMLFormElement>) {
-        event.preventDefault()
+        //event.preventDefault()
 
         const apiUrl:string = process.env.NEXT_PUBLIC_API_URL!;
         const formData = new FormData(event.currentTarget)

@@ -5,6 +5,7 @@ import Image from "next/image";
 import ButtonLocation from "@/app/components/ButtonLocation";
 import {useEffect, useState} from "react";
 import {VisitorI} from "@/app/model/VisitorI";
+import FormJoinWedding from "@/app/components/FormJoinWedding";
 
 export default function Home() {
   const [id, setId] = useState<string>("");
@@ -41,8 +42,8 @@ export default function Home() {
             }
           });
           const visitor: VisitorI= await response.json();
-          console.log(visitor);
           setVisitor(visitor);
+          console.log(visitor);
         }
       } catch (error) {
         console.error("Error fetching visitor data:", error);
@@ -85,12 +86,13 @@ export default function Home() {
         <div className="flex flex-col items-center space-y-10 my-10">
           <h1 className="text-7xl text-center">
             <p className="text-xl  px-10">
-              {visitor?.welcomeMessage} zveme na naši svatbu, která se uskuteční 9. srpna 2025 v
+              {visitor?.welcomeMessage} pozvali na naši svatbu, která se uskuteční 9. srpna 2025 v
               09:00. Pokud se na tomto vyjímečném dnu setkáme, prosíme o vyplnění a odeslání následujícího dotazníku [Link].
             </p>
           </h1>
           <Countdown />
         </div>
+        <FormJoinWedding id={id} ></FormJoinWedding>
       </section>
       <section className="bg-base-200">
         <div className="bg-white flex flex-col justify-center items-center">
