@@ -3,6 +3,7 @@
 import {FormEvent, useEffect, useState} from "react";
 import {IVisitor} from "@/app/model/IVisitor";
 
+
 interface VisitorProps{
   visitor:IVisitor | undefined;
 }
@@ -21,24 +22,26 @@ export default function FormJoinWedding({ visitor }:VisitorProps ) {
         setCeremony(visitor?.weddingForm?.ceremony ?? false);
         setParty(visitor?.weddingForm?.party ?? false);
         setOid(visitor?._id.$oid ?? '');
-
     },[]);
 
+
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
-    //event.preventDefault()
+    event.preventDefault()
 
     const apiUrl:string = process.env.NEXT_PUBLIC_API_URL!;
     const formData = new FormData(event.currentTarget);
 
-
-    const response:Response = await fetch(apiUrl.concat("/saveWeddingForm"), {
+     fetch(apiUrl.concat("/saveWeddingForm"), {
                                 method: 'POST',
                                 body: formData,
-                                 })
-    if (!response.ok) {
-        throw new Error(`Response status: ${response.status}`);
-    }
+                                 }).then(response => {
+                                if (!response.ok) {
+                                    throw new Error('Network response was not ok ' + response.statusText);
+                                }else{
+                                    window.location.reload();
+                                }
 
+                            })
   }
 
   return (
@@ -86,15 +89,16 @@ export default function FormJoinWedding({ visitor }:VisitorProps ) {
         <div className="m-2">
             <label htmlFor="ceremony">Účast na obřadu</label>
             <input name="ceremony" type="checkbox"
-                   defaultChecked={ceremony}
-                   checked={ceremony} onChange={e => setCeremony(e.target.checked)}
+                   checked={ceremony}
+                   onChange={e => setCeremony(e.target.checked)}
             />
         </div>
 
         <div className="m-2">
             <label htmlFor="party">Účast na oslavě</label>
             <input id="party" name="party" type="checkbox"
-                   checked={party} onChange={e => setParty(e.target.checked)}
+                   checked={party}
+                   onChange={e => setParty(e.target.checked)}
             />
         </div>
 

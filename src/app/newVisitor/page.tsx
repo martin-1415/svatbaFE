@@ -38,9 +38,13 @@ export default function Page() {
         if (!response.ok) {
             throw new Error(`Response status: ${response.status}`);
         }
+
+
+
         // Await the response parsing
         hash = await response.text();
         alert(process.env.NEXT_PUBLIC_URL!.concat('?id=').concat(hash));
+        window.location.reload();
     }
 
     return (
