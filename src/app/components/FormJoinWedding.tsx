@@ -12,8 +12,8 @@ export default function FormJoinWedding({ visitor }:VisitorProps ) {
     const [ppl, setPpl] = useState<number | string>('');
     const [children, setChildren] = useState<number| string>('');
     const [oid, setOid] = useState<string>('');
-    const [ceremony, setCeremony] = useState<boolean>(false);
-    const [party, setParty] = useState<boolean>(false);
+    const [ceremony, setCeremony] = useState<boolean>();
+    const [party, setParty] = useState<boolean>();
 
     useEffect(() => {
         setChildren(visitor?.weddingForm?.children ?? '');
@@ -25,7 +25,7 @@ export default function FormJoinWedding({ visitor }:VisitorProps ) {
     },[]);
 
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault()
+    //event.preventDefault()
 
     const apiUrl:string = process.env.NEXT_PUBLIC_API_URL!;
     const formData = new FormData(event.currentTarget);
@@ -85,12 +85,17 @@ export default function FormJoinWedding({ visitor }:VisitorProps ) {
 
         <div className="m-2">
             <label htmlFor="ceremony">Účast na obřadu</label>
-            <input name="ceremony" type="checkbox" defaultChecked={ceremony}   />
+            <input name="ceremony" type="checkbox"
+                   defaultChecked={ceremony}
+                   checked={ceremony} onChange={e => setCeremony(e.target.checked)}
+            />
         </div>
 
         <div className="m-2">
             <label htmlFor="party">Účast na oslavě</label>
-            <input id="party" name="party" type="checkbox" defaultChecked={party} />
+            <input id="party" name="party" type="checkbox"
+                   checked={party} onChange={e => setParty(e.target.checked)}
+            />
         </div>
 
         <input type="hidden" name="id"
