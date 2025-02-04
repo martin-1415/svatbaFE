@@ -8,23 +8,30 @@ interface VisitorProps{
 }
 
 export default function FormJoinWedding({ visitor }:VisitorProps ) {
-  const [ppl, setPpl] = useState<number | string>('');
-  const [children, setChildren] = useState<number| string>('');
+    const [ppl, setPpl] = useState<number | string>('');
+    const [children, setChildren] = useState<number| string>('');
+    const [oid, setOid] = useState<string>('');
+    const [ceremony, setCeremony] = useState<boolean>(false);
+    const [party, setParty] = useState<boolean>(false);
 
     useEffect(() => {
         setChildren(visitor?.weddingForm.children ?? '');
         setPpl(visitor?.weddingForm.ppl ?? '');
+        setCeremony(visitor?.weddingForm.ceremony ?? false);
+        setParty(visitor?.weddingForm.party ?? false);
+        setOid(visitor?._id.$oid ?? '');
+
     },[visitor]);
 
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
-    //event.preventDefault()
+    event.preventDefault()
 
     const apiUrl:string = process.env.NEXT_PUBLIC_API_URL!;
     const formData = new FormData(event.currentTarget);
 
     try {
-
-      const response:Response = await fetch(apiUrl.concat("/saveWeddingForm"), {
+        console.log(formData);
+        const response:Response = await fetch(apiUrl.concat("/saveWeddingForm"), {
         method: 'POST',
         body: formData,
       })
@@ -80,17 +87,18 @@ export default function FormJoinWedding({ visitor }:VisitorProps ) {
           />
         </div>
 
-        {/*<div className="m-2">*/}
-        {/*  <input id="ceremony" name="ceremony" type="checkbox"/>*/}
-        {/*  <label htmlFor="ceremony">Účast na obřadu</label>*/}
-        {/*</div>*/}
+        <div className="m-2">
+            <label htmlFor="ceremony">Účast na obřadu</label>
+            <input name="ceremony" type="checkbox" defaultChecked={ceremony}   />
+        </div>
 
-        {/*<div className="m-2">*/}
-        {/*  <input id="party" name="party" type="checkbox"/>*/}
-        {/*  <label htmlFor="party">Účast na oslavě</label>*/}
-        {/*</div>*/}
+        <div className="m-2">
+            <label htmlFor="party">Účast na oslavě</label>
+            <input id="party" name="party" type="checkbox" defaultChecked={party} />
+        </div>
 
-        {/*<input type="hidden" name="id" value={visitor?._id.$oid}/>*/}
+        <input type="hidden" name="id"
+               value={oid === undefined ? '' : oid}/>
 
         <div className="m-2 flex gap-4">
           <button
