@@ -2,8 +2,8 @@
 
 import React, { useState, useEffect } from "react";
 
-const CountdownTimer = () => {
-  const targetDate = "2025-08-09 09:00";
+export default function CountdownTimer(){
+  const targetDate = "2025-08-09 12:30"; // works in UTC +1 hour needed for czech
 
   const calculateTimeLeft = () => {
   const difference: number = new Date(targetDate).getTime() - new Date().getTime();
@@ -43,25 +43,25 @@ const CountdownTimer = () => {
             <div className="text-3xl font-bold">
               {formatTime(timeLeft[0])}
             </div>
-            <div className="text-sm">Days</div>
+            <div className="text-sm">Dnů</div>
           </div>
           <div className="flex flex-col items-center w-32 h-24 mx-2 text-white bg-fuchsia-900 shadow-md rounded-xl p-4 m-1">
             <div className="text-3xl font-bold">
               {formatTime(timeLeft[1])}
             </div>
-            <div className="text-sm">Hours</div>
+            <div className="text-sm">Hodin</div>
           </div>
           <div className="flex flex-col items-center w-32 h-24 mx-2 text-white bg-fuchsia-900 shadow-md rounded-xl p-4 m-1">
             <div className="text-3xl font-bold">
               {formatTime(timeLeft[2])}
             </div>
-            <div className="text-sm">Minutes</div>
+            <div className="text-sm">Minut</div>
           </div>
           <div className="flex flex-col items-center w-32 h-24 mx-2 text-white bg-fuchsia-900 shadow-md rounded-xl p-4 m-1">
             <div className="text-3xl font-bold">
               {formatTime(timeLeft[3])}
             </div>
-            <div className="text-sm">Seconds</div>
+            <div className="text-sm">Sekund</div>
           </div>
         </div>
       )}
@@ -69,4 +69,4 @@ const CountdownTimer = () => {
   );
 };
 
-export default CountdownTimer;
+

@@ -7,7 +7,11 @@ export default {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+
     extend: {
+      spacing: {
+        'header': '60px',
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",

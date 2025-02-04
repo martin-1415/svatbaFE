@@ -2,7 +2,7 @@
 
 import Countdown from "@/app/components/Countdown";
 import Image from "next/image";
-import ButtonLocation from "@/app/components/ButtonLocation";
+import ButtonInfo from "@/app/components/ButtonInfo";
 import {useEffect, useState} from "react";
 import {IVisitor} from "@/app/model/IVisitor";
 import FormJoinWedding from "@/app/components/FormJoinWedding";
@@ -52,51 +52,54 @@ export default function Home() {
     fetchData();
   }
 
-
   return (
-    <div>
+    <div className="relative top-header ">
       <section className="bg-base-100">
+
         <img src="/curlies.svg" alt="Icon" className="absolute top-2 left-2 z-10 w-1/2 opacity-50" />
 
-        <div className="absolute z-10 top-14 font-dancing left-14 text-2xl m-2">
-          Tak dlouho se hledali, až na sebe zbyli.
-        </div>
-        <div className="relative w-full">
+
+        <div className="relative w-full ">
           <Image
-            src="/galerie/title3.jpg"
+            src="/main2.jpg"
             alt="Family Photo"
             width={1920}
             height={1080}
             className="w-full opacity-50"
           />
-          <div className=" absolute bottom-0 w-full bg-violet-200 text-violet-900 flex flex-col items-center px-4 py-4 space-y-10 text-center">
-            <h1 className="text-4xl font-light font-dancing ">Šárka</h1>
-            <div className="flex items-center w-1/2">
-              <div className="flex-grow border-t border-violet-900 "></div>
-              <span className="mx-4 text-2xl font-dancing ">&</span>
-              <div className="flex-grow border-t border-violet-900 "></div>
-            </div>
-            <h1 className="text-4xl font-dancing">Martin</h1>
+          <div className="absolute z-10 bottom-10 font-dancing  text-4xl p-2 text-center w-full">
+            Tak dlouho se hledali, až na sebe zbyli.
           </div>
-
         </div>
+
+        <div className="  w-full bg-violet-200 text-violet-900 flex flex-col items-center px-4 py-4 space-y-10 text-center">
+          <h1 className="text-4xl font-light font-dancing ">Šárka</h1>
+          <div className="flex items-center w-1/2">
+            <div className="flex-grow border-t border-violet-900 "></div>
+            <span className="mx-4 text-2xl font-dancing ">&</span>
+            <div className="flex-grow border-t border-violet-900 "></div>
+          </div>
+          <h1 className="text-4xl font-dancing">Martin</h1>
+        </div>
+
+
       </section>
 
       <section>
         <div className="flex flex-col items-center space-y-10 my-10">
-          <h1 className="text-7xl text-center">
-            <p className="text-xl  px-10">
-              {visitor?.welcomeMessage} pozvali na naši svatbu, která se uskuteční 9. srpna 2025 v
-              09:00. Pokud se na tomto vyjímečném dnu setkáme, prosíme o vyplnění a odeslání následujícího dotazníku [Link].
-            </p>
-          </h1>
+
+            <div className="text-4xl  px-10 text-center font-dancing">
+              {visitor?.welcomeMessage} pozvali na naši svatbu, která se uskuteční
+            </div>
+            <div className="text-4xl font-extrabold">9. srpna 2025</div>
+
           <Countdown />
         </div>
         {visitor && <FormJoinWedding visitor={visitor} />}
       </section>
-      <section className="bg-base-200">
-        <div className="bg-white flex flex-col justify-center items-center">
-          <div className="flex flex-col items-center -space-y-36">
+
+      <section className="bg-base-200 bg-white flex flex-col justify-center items-center" id="details">
+          <div id="flowers" className="flex flex-col items-center -space-y-36">
             <div className="flex justify-center">
               <Image
                 src="/line-flowers.jpg"
@@ -107,23 +110,17 @@ export default function Home() {
               />
             </div>
             <div className="flex flex-col items-center text-center space-y-6 z-10">
-              <h1 className="text-7xl font-sans text-gray-800">
-                Wedding Schedule
-              </h1>
               <div className="flex items-center space-x-4 w-1/2">
-                <div className="flex-grow border-t border-black"></div>
-                <span className="text-4xl font-dancing">Save The Date</span>
-                <div className="flex-grow border-t border-black"></div>
+                <span className="text-6xl font-dancing">Informace ke svatbě</span>
               </div>
-
-              <p className="text-xl font-extrabold text-gray-700">
-                Saturday, August 9, 2025
-              </p>
+              <hr className="w-64 h-1 mx-auto my-4 bg-black border-0 rounded-sm md:my-10"/>
             </div>
           </div>
-          <div className="flex flex-wrap items-start justify-center my-20 gap-40 w-full" >
-            <div className="basis-1/2 flex flex-col justify-center space-y-4 text-center max-w-96   h-[100vh] sm:h-auto">
-              <div className="flex justify-center mb-10">
+
+          {/*CEREMONY*/}
+          <div id="ceremony" className="flex flex-wrap items-start justify-center my-20 gap-40 w-full" >
+            <div className="basis-1/2 flex flex-col justify-center space-y-4 text-center max-w-96  h-[100vh] sm:h-auto">
+              <div className="flex justify-center mb-3)">
                 <Image
                   src="/ceremony.png"
                   alt="Ceremony"
@@ -132,49 +129,9 @@ export default function Home() {
                   className="w-28 rounded-xl"
                 />
               </div>
-              <h2 className="text-xl font-bold">Wedding Ceremony</h2>
-              <p className="text-md font-extrabold text-gray-800">09:00 hrs.</p>
-              <p className="text-md text-gray-600">Ceremony</p>
-              <div className="flex justify-center items-center">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                  className="h-10 w-10 text-gray-800"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="m11.54 22.351.07.04.028.016a.76.76 0 0 0 .723 0l.028-.015.071-.041a16.975 16.975 0 0 0 1.144-.742 19.58 19.58 0 0 0 2.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 0 0-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 0 0 2.682 2.282 16.975 16.975 0 0 0 1.145.742ZM12 13.5a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-              </div>
-
-              <p className="text-md text-gray-800 ">
-                Kostel sv. Markéty, U Sv. Markéty, 386 01 Strakonice 1
-              </p>
-              <div className="mt-auto">
-                <ButtonLocation
-                  title="Location"
-                  url="https://goo.gl/maps/7Z3Z9Z9Z9Z9Z9Z9Z9"
-                />
-              </div>
-            </div>
-            <div className="basis-1/2 flex flex-col justify-start space-y-4 text-center max-w-96 h-[100vh] sm:h-auto">
-              <div className="flex justify-center mb-10">
-                <Image
-                  src="/celebration.png"
-                  alt="Celebration"
-                  width={300}
-                  height={300}
-                  className="w-28 rounded-xl"
-                />
-              </div>
-              <h2 className="text-xl font-bold">Wedding Reception</h2>
-              <p className="text-md font-extrabold text-gray-800">
-                12 :00 hrs.
-              </p>
-              <p className="text-md text-gray-600">Party</p>
+              <h2 className="text-xl font-bold">Obřad</h2>
+              <p className="text-md font-extrabold text-gray-800">9.8.2025 11:30 </p>
+              <p className="text-md text-gray-600">Zámek Dub</p>
               <div className="flex justify-center items-center">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -190,17 +147,143 @@ export default function Home() {
                 </svg>
               </div>
               <p className="text-md text-gray-800 ">
-                Pension Regina U Rybníka 8, 382 11 Větřní
+                Adresa: Dub 1, 384 25 Dub
               </p>
               <div className="mt-auto">
-                <ButtonLocation
-                  title="Location"
+                <ButtonInfo
+                  title="Více informací"
                   url="https://goo.gl/maps/7Z3Z9Z9Z9Z9Z9Z9Z9"
                 />
               </div>
             </div>
           </div>
+
+
+
+
+            {/*PARTY*/}
+            <div id="party" className="flex flex-wrap items-start justify-center my-20 gap-40 w-full" >
+              <div className="basis-1/2 flex flex-col justify-start space-y-4 text-center max-w-96 h-[100vh] sm:h-auto">
+                <div className="flex justify-center mb-3">
+                  <Image
+                    src="/celebration.png"
+                    alt="Celebration"
+                    width={300}
+                    height={300}
+                    className="w-28 rounded-xl"
+                  />
+                </div>
+                <h2 className="text-xl font-bold">Wedding Reception</h2>
+                <p className="text-md font-extrabold text-gray-800">
+                  12 :00 hrs.
+                </p>
+                <p className="text-md text-gray-600">Party</p>
+                <div className="flex justify-center items-center">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    className="h-10 w-10 text-gray-800"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="m11.54 22.351.07.04.028.016a.76.76 0 0 0 .723 0l.028-.015.071-.041a16.975 16.975 0 0 0 1.144-.742 19.58 19.58 0 0 0 2.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 0 0-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 0 0 2.682 2.282 16.975 16.975 0 0 0 1.145.742ZM12 13.5a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                </div>
+                <p className="text-md text-gray-800 ">
+                  Pension Regina U Rybníka 8, 382 11 Větřní
+                </p>
+                <div className="mt-auto">
+                  <ButtonInfo
+                    title="Více informací"
+                    url="https://goo.gl/maps/7Z3Z9Z9Z9Z9Z9Z9Z9"
+                  />
+                </div>
+              </div>
+            </div>
+
+        {/*ACCOMODATION*/}
+        <div id="accomodation" className="flex flex-wrap items-start justify-center my-20 gap-40 w-full" >
+          <div className="basis-1/2 flex flex-col justify-start space-y-4 text-center max-w-96 h-[100vh] sm:h-auto">
+            <div className="flex justify-center mb-3">
+              <Image
+                  src="/accomodation.png"
+                  alt="accomodation"
+                  width={300}
+                  height={300}
+                  className="w-28 rounded-xl"
+              />
+            </div>
+            <h2 className="text-xl font-bold">Ubytování</h2>
+            <p className="text-md text-gray-600">Party</p>
+            <div className="flex justify-center items-center">
+              <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  className="h-10 w-10 text-gray-800"
+              >
+                <path
+                    fillRule="evenodd"
+                    d="m11.54 22.351.07.04.028.016a.76.76 0 0 0 .723 0l.028-.015.071-.041a16.975 16.975 0 0 0 1.144-.742 19.58 19.58 0 0 0 2.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 0 0-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 0 0 2.682 2.282 16.975 16.975 0 0 0 1.145.742ZM12 13.5a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"
+                    clipRule="evenodd"
+                />
+              </svg>
+            </div>
+            <p className="text-md text-gray-800 ">
+              Pension Regina U Rybníka 8, 382 11 Větřní
+            </p>
+            <div className="mt-auto">
+              <ButtonInfo
+                  title="Více informací"
+                  url="https://goo.gl/maps/7Z3Z9Z9Z9Z9Z9Z9Z9"
+              />
+            </div>
+          </div>
         </div>
+
+        {/*GIFT*/}
+        <div id="gift" className="flex flex-wrap items-start justify-center my-20 gap-40 w-full" >
+          <div className="basis-1/2 flex flex-col justify-start space-y-4 text-center max-w-96 ">
+            <div className="flex justify-center mb-3">
+              <Image
+                  src="/gift.png"
+                  alt="gift"
+                  width={300}
+                  height={300}
+                  className="w-28 rounded-xl"
+              />
+            </div>
+            <h2 className="text-xl font-bold">Svatební dary</h2>
+            <p className="text-md text-gray-600">Party</p>
+            <div className="flex justify-center items-center">
+              <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  className="h-10 w-10 text-gray-800"
+              >
+                <path
+                    fillRule="evenodd"
+                    d="m11.54 22.351.07.04.028.016a.76.76 0 0 0 .723 0l.028-.015.071-.041a16.975 16.975 0 0 0 1.144-.742 19.58 19.58 0 0 0 2.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 0 0-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 0 0 2.682 2.282 16.975 16.975 0 0 0 1.145.742ZM12 13.5a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"
+                    clipRule="evenodd"
+                />
+              </svg>
+            </div>
+            <p className="text-md text-gray-800 ">
+              Pension Regina U Rybníka 8, 382 11 Větřní
+            </p>
+            <div className="mt-auto">
+              <ButtonInfo
+                  title="Více informací"
+                  url="https://goo.gl/maps/7Z3Z9Z9Z9Z9Z9Z9Z9"
+              />
+            </div>
+          </div>
+        </div>
+
       </section>
     </div>
   );

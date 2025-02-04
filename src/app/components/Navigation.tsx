@@ -2,7 +2,7 @@ import BurgerMenu from "@/app/components/BurgerMenu/BurgerMenu";
 
 export default function Navigation() {
     return (
-        <div  className="absolute top-1 right-1 z-10 ">
+        <div  className="absolute top-1 right-1 z-10 h-header">
             <div className="flex flex-row-reverse
                               sm:hidden">
                 <BurgerMenu/>
