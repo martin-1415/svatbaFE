@@ -27,15 +27,8 @@ export default function Home() {
       setId(load_id);
     }
 
-    fetchData();
+  },[]);
 
-  }, []);
-
-  // useEffect(() => {
-  //   // load visitor details
-  //
-  //
-  // }, [id]);
 
   const fetchData = async () => {
     try {
@@ -54,6 +47,11 @@ export default function Home() {
       console.error("Error fetching visitor data:", error);
     }
   }
+
+  if(visitor==undefined){
+    fetchData();
+  }
+
 
   return (
     <div>
@@ -94,7 +92,7 @@ export default function Home() {
           </h1>
           <Countdown />
         </div>
-        <FormJoinWedding visitor={visitor} ></FormJoinWedding>
+        {visitor && <FormJoinWedding visitor={visitor} />}
       </section>
       <section className="bg-base-200">
         <div className="bg-white flex flex-col justify-center items-center">

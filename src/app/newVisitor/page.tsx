@@ -22,29 +22,24 @@ export default function Page() {
     }, []);
 
     async function onSubmit(event: FormEvent<HTMLFormElement>) {
-        //event.preventDefault()
+        event.preventDefault()
 
         const apiUrl:string = process.env.NEXT_PUBLIC_API_URL!;
         const formData = new FormData(event.currentTarget)
-        let response: Response;
         let hash: string = " ";
 
-        try {
-            response = await fetch(apiUrl.concat("/newVisitor"), {
-                            method: 'POST',
-                            body: formData,
-                            })
-            if (!response.ok) {
-                throw new Error(`Response status: ${response.status}`);
-            }
-            // Await the response parsing
-            hash = await response.text();
 
-        } catch{
-            console.error("Saving visitor failed");
-            return;
+
+        const response: Response = await fetch(apiUrl.concat("/newVisitor"), {
+                        method: 'POST',
+                        body: formData,
+                        });
+
+        if (!response.ok) {
+            throw new Error(`Response status: ${response.status}`);
         }
-
+        // Await the response parsing
+        hash = await response.text();
         alert(process.env.NEXT_PUBLIC_URL!.concat('?id=').concat(hash));
     }
 

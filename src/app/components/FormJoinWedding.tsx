@@ -8,6 +8,7 @@ interface VisitorProps{
 }
 
 export default function FormJoinWedding({ visitor }:VisitorProps ) {
+
     const [ppl, setPpl] = useState<number | string>('');
     const [children, setChildren] = useState<number| string>('');
     const [oid, setOid] = useState<string>('');
@@ -15,13 +16,13 @@ export default function FormJoinWedding({ visitor }:VisitorProps ) {
     const [party, setParty] = useState<boolean>(false);
 
     useEffect(() => {
-        setChildren(visitor?.weddingForm.children ?? '');
-        setPpl(visitor?.weddingForm.ppl ?? '');
-        setCeremony(visitor?.weddingForm.ceremony ?? false);
-        setParty(visitor?.weddingForm.party ?? false);
+        setChildren(visitor?.weddingForm?.children ?? '');
+        setPpl(visitor?.weddingForm?.ppl ?? '');
+        setCeremony(visitor?.weddingForm?.ceremony ?? false);
+        setParty(visitor?.weddingForm?.party ?? false);
         setOid(visitor?._id.$oid ?? '');
 
-    },[visitor]);
+    },[]);
 
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
@@ -29,20 +30,15 @@ export default function FormJoinWedding({ visitor }:VisitorProps ) {
     const apiUrl:string = process.env.NEXT_PUBLIC_API_URL!;
     const formData = new FormData(event.currentTarget);
 
-    try {
-        console.log(formData);
-        const response:Response = await fetch(apiUrl.concat("/saveWeddingForm"), {
-        method: 'POST',
-        body: formData,
-      })
 
-      if (!response.ok) {
+    const response:Response = await fetch(apiUrl.concat("/saveWeddingForm"), {
+                                method: 'POST',
+                                body: formData,
+                                 })
+    if (!response.ok) {
         throw new Error(`Response status: ${response.status}`);
-      }
-    } catch(e: unknown){
-      console.error("Saving wedding form failed:"+e );
-      return;
     }
+
   }
 
   return (
@@ -61,7 +57,7 @@ export default function FormJoinWedding({ visitor }:VisitorProps ) {
               type="number"
               min="0"
               step="1"
-              onChange={e => setPpl(parseInt(e.target.value, 10))}
+              onChange={e => {if(e.target.value) {setPpl(parseInt(e.target.value, 10))}else{setPpl('')}}}
               onInput={(e: React.FormEvent<HTMLInputElement>) => {
                 const input = e.target as HTMLInputElement;
                 // Remove any non-digit characters
@@ -78,7 +74,7 @@ export default function FormJoinWedding({ visitor }:VisitorProps ) {
               type="number"
               min="0"
               step="1"
-              onChange={e => setChildren(parseInt(e.target.value, 10))}
+              onChange={e => { if(e.target.value) {setChildren(parseInt(e.target.value, 10))}else{setChildren('')}}}
               onInput={(e: React.FormEvent<HTMLInputElement>) => {
                 const input = e.target as HTMLInputElement;
                 // Remove any non-digit characters
