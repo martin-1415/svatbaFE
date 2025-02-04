@@ -26,31 +26,34 @@ export default function Home() {
     if (load_id) {
       setId(load_id);
     }
-  }, []);
 
-  useEffect(() => {
-    // load visitor details
-    const fetchData = async () => {
-      try {
-        if(id) {
-          const params = new URLSearchParams({id: id});
-          const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL!.concat("/getOne")}?${params.toString()}`, {
-            method: "GET",
-            headers: {
-              "Content-Type": "application/json"
-            }
-          });
-          const visitor: IVisitor= await response.json();
-          setVisitor(visitor);
-        }
-      } catch (error) {
-        console.error("Error fetching visitor data:", error);
-      }
-    }
     fetchData();
 
-  }, [id]);
+  }, []);
 
+  // useEffect(() => {
+  //   // load visitor details
+  //
+  //
+  // }, [id]);
+
+  const fetchData = async () => {
+    try {
+      if(id) {
+        const params = new URLSearchParams({id: id});
+        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL!.concat("/getOne")}?${params.toString()}`, {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json"
+          }
+        });
+        const visitor: IVisitor= await response.json();
+        setVisitor(visitor);
+      }
+    } catch (error) {
+      console.error("Error fetching visitor data:", error);
+    }
+  }
 
   return (
     <div>
