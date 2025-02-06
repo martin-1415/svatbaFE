@@ -3,6 +3,7 @@ import { Geist, Geist_Mono, Dancing_Script } from "next/font/google";
 import "./globals.css";
 import Navigation from "@/app/components/Navigation";
 
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -40,7 +41,9 @@ export default function RootLayout({
         />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} ${dancingScript.variable} bg-orange-50 flex flex-col`}>
+
         <div id="header" className="h-header bg-violet-300 ">
+          {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
             <Navigation />
         </div>
 
