@@ -2,18 +2,21 @@ import BurgerMenu from "@/app/components/BurgerMenu/BurgerMenu";
 
 export default function Navigation() {
     return (
-        <div  className="absolute top-1 right-1 z-10 h-header">
+        <div  className="absolute top-1 right-1 z-10 h-header w-full">
             <div className="flex flex-row-reverse
                               sm:hidden">
                 <BurgerMenu/>
             </div>
-            <div className="hidden
+
+            <div className="hidden relative top-6 font-bold
                               sm:flex sm:flex-row sm:justify-evenly ">
-                <div>Jedno menu</div>
-                <div>Dve menu</div>
-                <div>Tri menu</div>
-                <div>Ctyri menu</div>
+                <a href="/ceremony"> Obřad</a>
+                <a href="/party"> Svatební zábava</a>
+                <a href="/accomodation"> Ubytování</a>
+                <a href="/gifts"> Svatební dary</a>
             </div>
+
         </div>
+
                 );
 }

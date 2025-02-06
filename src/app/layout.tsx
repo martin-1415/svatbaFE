@@ -40,7 +40,7 @@ export default function RootLayout({
         />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} ${dancingScript.variable} bg-orange-50 flex flex-col`}>
-        <div id="header">
+        <div id="header" className="h-header bg-violet-300 ">
             <Navigation />
         </div>
 
@@ -48,8 +48,11 @@ export default function RootLayout({
             {children}
         </main>
 
-        <div id="footer" className="bg-violet-300 h-40">
-
+        <div id="footer" className="relative bg-black h-40 text-white">
+          <div className="flex justify-between text-sm">
+            <div className="w-3/12 p-2">Šárka: Design stránek</div>
+            <div className="w-3/12 p-2">Martin: NextJs, Spring Boot, Kubernates, MongoDB</div>
+          </div>
         </div>
       </body>
     </html>

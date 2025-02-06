@@ -152,7 +152,7 @@ export default function Home() {
               <div className="mt-auto">
                 <ButtonInfo
                   title="Více informací"
-                  url="https://goo.gl/maps/7Z3Z9Z9Z9Z9Z9Z9Z9"
+                  url="/ceremony"
                 />
               </div>
             </div>
@@ -173,11 +173,11 @@ export default function Home() {
                     className="w-28 rounded-xl"
                   />
                 </div>
-                <h2 className="text-xl font-bold">Wedding Reception</h2>
+                <h2 className="text-xl font-bold">Svatební zábava</h2>
                 <p className="text-md font-extrabold text-gray-800">
-                  12 :00 hrs.
+                  13 :00
                 </p>
-                <p className="text-md text-gray-600">Party</p>
+                <p className="text-md text-gray-600">Párty</p>
                 <div className="flex justify-center items-center">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -193,12 +193,12 @@ export default function Home() {
                   </svg>
                 </div>
                 <p className="text-md text-gray-800 ">
-                  Pension Regina U Rybníka 8, 382 11 Větřní
+                  Tvrz Drahonice č.p. 32, okr. Strakonice
                 </p>
                 <div className="mt-auto">
                   <ButtonInfo
                     title="Více informací"
-                    url="https://goo.gl/maps/7Z3Z9Z9Z9Z9Z9Z9Z9"
+                    url="/party"
                   />
                 </div>
               </div>
@@ -233,12 +233,12 @@ export default function Home() {
               </svg>
             </div>
             <p className="text-md text-gray-800 ">
-              Pension Regina U Rybníka 8, 382 11 Větřní
+              Tvrz Drahonice č.p. 32, okr. Strakonice
             </p>
             <div className="mt-auto">
               <ButtonInfo
                   title="Více informací"
-                  url="https://goo.gl/maps/7Z3Z9Z9Z9Z9Z9Z9Z9"
+                  url="/accomodation"
               />
             </div>
           </div>
@@ -273,12 +273,12 @@ export default function Home() {
               </svg>
             </div>
             <p className="text-md text-gray-800 ">
-              Pension Regina U Rybníka 8, 382 11 Větřní
+              xxx
             </p>
             <div className="mt-auto">
               <ButtonInfo
                   title="Více informací"
-                  url="https://goo.gl/maps/7Z3Z9Z9Z9Z9Z9Z9Z9"
+                  url="/gifts"
               />
             </div>
           </div>
