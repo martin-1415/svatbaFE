@@ -42,7 +42,7 @@ export default function RootLayout({
             {children}
         </main>
 
-        <div id="footer" className="relative bg-violet-300 h-40 text-white">
+        <div id="footer" className="relative bg-violet-950 h-40 text-white">
         </div>
       </body>
     </html>

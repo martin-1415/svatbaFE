@@ -56,7 +56,7 @@ export default function Home() {
   return (
     <div className="relative ">
       <section className="bg-base-100">
-        <div className="relative w-full ">
+        <div className="relative w-full overflow-hidden">
           <Image
             src="/title.png"
             alt="Family Photo"
@@ -109,7 +109,7 @@ export default function Home() {
               <div className="basis-1/2 flex flex-col justify-center space-y-4 text-center max-w-96  sm:h-auto">
                 <div className="flex justify-center mb-3)">
                   <Image
-                    src="/ceremony.png"
+                    src="/ceremonyb.png"
                     alt="Ceremony"
                     width={300}
                     height={300}
@@ -153,7 +153,7 @@ export default function Home() {
                 <div className="basis-1/2 flex flex-col justify-start space-y-4 text-center max-w-96 h-[90vh] sm:h-auto">
                   <div className="flex justify-center mb-3">
                     <Image
-                      src="/celebration.png"
+                      src="/celebrationb.png"
                       alt="Celebration"
                       width={300}
                       height={300}
@@ -196,7 +196,7 @@ export default function Home() {
             <div className="basis-1/2 flex flex-col justify-start space-y-4 text-center max-w-96 h-[90vh] sm:h-auto">
               <div className="flex justify-center mb-3">
                 <Image
-                    src="/accomodation.png"
+                    src="/accomodationb.png"
                     alt="accomodation"
                     width={300}
                     height={300}
@@ -236,7 +236,7 @@ export default function Home() {
             <div className="basis-1/2 flex flex-col justify-start space-y-4 text-center max-w-96 ">
               <div className="flex justify-center mb-3">
                 <Image
-                    src="/gift.png"
+                    src="/giftb.png"
                     alt="gift"
                     width={300}
                     height={300}
@@ -244,7 +244,7 @@ export default function Home() {
                 />
               </div>
               <h2 className="text-xl font-bold">Svatební dary</h2>
-              <p className="text-md text-gray-600">Party</p>
+              <p className="text-md text-gray-600">xxx</p>
               <div className="flex justify-center items-center">
                 <svg
                     xmlns="http://www.w3.org/2000/svg"

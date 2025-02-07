@@ -9,7 +9,7 @@ export default function ButtonInfo({
 }) {
   return (
     <Link href={url}  >
-      <button className=" text-white text-xl w-full shadow-lg border-amber-600 bg-amber-600 hover:bg-amber-800 rounded-xl px-4 py-2 max-w-46">
+      <button className=" text-white text-xl shadow-lg border-violet-900 bg-violet-900  rounded-full px-4 py-2">
         {title}
       </button>
     </Link>
