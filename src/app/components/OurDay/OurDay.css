@@ -1,0 +1,10 @@
+.bg-image-wrapper::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url('../../../../public/levandule2.png');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.2; /* Adjust opacity as needed */
+    z-index: -1;  /* Place the pseudo-element behind content */
+}

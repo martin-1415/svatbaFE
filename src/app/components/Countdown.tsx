@@ -36,7 +36,7 @@ export default function CountdownTimer(){
   return (
     <div className="flex justify-center items-center">
       {timeLeft.every((value) => value === 0) ? (
-        <span>Time&#39;s up!</span>
+        <span>Už jsou svoji!</span>
       ) : (
         <div className="flex flex-wrap justify-between">
           <div className="flex flex-col items-center w-32 h-24 mx-2 text-white bg-fuchsia-900 shadow-md rounded-xl p-4 m-1">

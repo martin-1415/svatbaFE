@@ -7,5 +7,6 @@ export interface IVisitor {
         children:number,
         ceremony:boolean,
         party:boolean
+        notAttending:boolean
     } | undefined;
 }
