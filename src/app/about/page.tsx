@@ -1,3 +1,12 @@
 export default function Page() {
-    return <div>About test cicd nejede</div>
+    return(
+        <div>
+            <h1>Jak to začalo...</h1>
+
+            Martin vyučený , sběratel kuriozit
+
+        </div>
+
+
+    )
 }

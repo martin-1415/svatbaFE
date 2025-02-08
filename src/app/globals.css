@@ -7,3 +7,13 @@
 body{
     font-family: 'Raleway', sans-serif;
 }
+
+.detailTitle{
+    font-weight: bold;
+    margin: 30px;
+}
+.detailText{
+
+    margin: 15px;
+}
+

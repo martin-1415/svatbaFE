@@ -64,12 +64,12 @@ export default function Home() {
             height={1080}
             className="w-full opacity-50"
           />
-          <div className="absolute -right-12 rounded-full bg-gray-300  p-6 z-10 top-1/2  w-[55vw] h-24  text-center">
+          <div className="absolute -right-12 rounded-full bg-gray-300  p-6 z-10 top-1/2  w-[55vw] h-24  text-center shadow-xl">
             <div className=" pr-8 font-dancing text-violet-900  ">Tak dlouho se hledali, </div>
             <div className=" pr-8 font-dancing text-violet-900  ">až na sebe zbyli.</div>
           </div>
 
-          <div className="absolute bottom-8 left-4 pr-8 text-2xl font-dancing text-violet-900 text-left">A řeknou si své ano.</div>
+          <div className="absolute bottom-8 left-4 pr-8 text-2xl font-dancing text-violet-900 text-left">A řeknou si své ANO.</div>
 
         </div>
 
@@ -85,7 +85,7 @@ export default function Home() {
       </section>
 
       <section>
-        <h1 className="text-4xl font-dancing px-16 py-6 text-violet-900">Ano si řekneme přesně za ...</h1>
+        <h1 className="text-4xl font-dancing px-16 py-6 text-violet-900">ANO si řekneme přesně za ...</h1>
         <Countdown />
         <div className="flex flex-col items-center space-y-10 my-10">
 
