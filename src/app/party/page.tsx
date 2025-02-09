@@ -14,7 +14,7 @@ export default function Page() {
                 tří dětí jsou vítané i vaše děti.
 
 
-
+                Převléknout se můžete po focení během hostiny.
                 Na místě oslavy je možné zarezervovat i ubytovíní. Více zde.
             </div>
 

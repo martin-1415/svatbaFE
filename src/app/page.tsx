@@ -89,13 +89,22 @@ export default function Home() {
         <Countdown />
         <div className="flex flex-col items-center space-y-10 my-10">
 
-            <div className=" px-10 text-center">
-              {visitor?.welcomeMessage} pozvali na naši svatbu, která se bude konat <b>9.srpna 2025</b>.
-              Veškeré informace najdeš níže. Předem Ti děkujeme za potvrzení a vyplnění
-              formuláře.
-            </div>
+          {visitor ? (
+              <div className=" px-10 text-center">
+                {visitor?.welcomeMessage} pozvali na naši svatbu, která se bude konat <b>9.srpna 2025</b>.
+                Veškeré informace najdeš níže. Předem Ti děkujeme za potvrzení a vyplnění
+                formuláře.
+              </div>
+          ) : (
+              <div className=" px-10 text-center">
+                Na těchto stránkách naleznete informace o naší svatbě. Pokud patříte mezi pozvané VIP lidi,
+                pravděpodobně jsme vám poslali odkaz obsahující kód se který vás automaticky přihlásí na tyto stránky.
+              </div>
+          )}
+
 
         </div>
+
         {visitor && <FormJoinWedding visitor={visitor} />}
       </section>
 
@@ -116,7 +125,7 @@ export default function Home() {
                     className="w-28 rounded-xl"
                   />
                 </div>
-                <h2 className="text-xl font-bold">Obřad</h2>
+                <h2 className="text-xl font-bold text-violet-900">Obřad</h2>
                 <p className="text-md font-extrabold text-gray-800">9.8.2025 11:30 </p>
                 <p className="text-md text-gray-600">Zámek Dub</p>
                 <div className="flex justify-center items-center">
@@ -160,9 +169,9 @@ export default function Home() {
                       className="w-28 rounded-xl"
                     />
                   </div>
-                  <h2 className="text-xl font-bold">Svatební zábava</h2>
+                  <h2 className="text-xl font-bold text-violet-900" >Svatební hostina</h2>
                   <p className="text-md font-extrabold text-gray-800">
-                    13 :00
+                    9.8.2025 13 :00
                   </p>
                   <p className="text-md text-gray-600">Párty</p>
                   <div className="flex justify-center items-center">
@@ -203,8 +212,8 @@ export default function Home() {
                     className="w-28 rounded-xl"
                 />
               </div>
-              <h2 className="text-xl font-bold">Ubytování</h2>
-              <p className="text-md text-gray-600">Party</p>
+              <h2 className="text-xl font-bold text-violet-900">Ubytování</h2>
+              <p className="text-md text-gray-800">9.8.2025 - 10.8.2025</p>
               <div className="flex justify-center items-center">
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -244,7 +253,6 @@ export default function Home() {
                 />
               </div>
               <h2 className="text-xl font-bold">Svatební dary</h2>
-              <p className="text-md text-gray-600">xxx</p>
               <div className="flex justify-center items-center">
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -259,9 +267,6 @@ export default function Home() {
                   />
                 </svg>
               </div>
-              <p className="text-md text-gray-800 ">
-                xxx
-              </p>
               <div className="mt-auto">
                 <ButtonInfo
                     title="Více informací"
