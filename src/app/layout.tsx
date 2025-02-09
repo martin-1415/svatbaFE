@@ -1,7 +1,7 @@
 
 import {  Dancing_Script } from "next/font/google";
 import "./globals.css";
-import Navigation from "@/app/components/Navigation";
+import Navigation from "@/app/components/Navigation/Navigation";
 
 
 
@@ -39,10 +39,12 @@ export default function RootLayout({
         </div>
 
         <main>
-            {children}
+            <div className="sm:px-20 sm:py-2 min-h-[calc(100vh-120px)]">
+                {children}
+            </div>
         </main>
 
-        <div id="footer" className="relative bg-violet-950 h-40 text-white">
+        <div id="footer" className="relative bg-violet-950 h-header text-white">
         </div>
       </body>
     </html>

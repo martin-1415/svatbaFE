@@ -44,8 +44,8 @@ export default function Home() {
         const visitor: IVisitor= await response.json();
         setVisitor(visitor);
       }
-    } catch (error) {
-      console.error("Error fetching visitor data:", error);
+    } catch {
+      console.info("Visitor not loaded.");
     }
   }
 
@@ -55,25 +55,24 @@ export default function Home() {
 
   return (
     <div className="relative ">
-      <section className="bg-base-100">
-        <div className="relative w-full overflow-hidden">
+      <section className="bg-base-100 sm:flex sm:flex-row" >
+        <div className="relative w-full overflow-hidden sm:h-[40vw] sm:w-auto">
           <Image
             src="/title.png"
             alt="Family Photo"
             width={1920}
             height={1080}
-            className="w-full opacity-50"
+            className="w-full opacity-50 sm:h-full sm:w-auto"
           />
-          <div className="absolute -right-12 rounded-full bg-gray-300  p-6 z-10 top-1/2  w-[55vw] h-24  text-center shadow-xl">
+          <div className="absolute -right-12 rounded-full bg-gray-300  p-6 z-10 top-1/2  w-[55vw] h-24  text-center shadow-xl sm:w-[25vw] sm:p-4 sm:h-auto">
             <div className=" pr-8 font-dancing text-violet-900  ">Tak dlouho se hledali, </div>
             <div className=" pr-8 font-dancing text-violet-900  ">až na sebe zbyli.</div>
           </div>
 
-          <div className="absolute bottom-8 left-4 pr-8 text-2xl font-dancing text-violet-900 text-left">A řeknou si své ANO.</div>
-
+          <div className="absolute bottom-8 left-4 pr-8 text-2xl font-dancing text-violet-900 text-left sm:bottom-1">A řeknou si své ANO.</div>
         </div>
 
-        <div className="  w-full bg-violet-200 text-violet-900 flex flex-col items-center px-4 py-4 space-y-10 text-center">
+        <div className="  w-full bg-violet-200 text-violet-900 flex flex-col items-center px-4 py-4 space-y-10 text-center sm:h-[40vw] sm:w-[40vw] sm:mx-6 sm:p-[6em]">
           <h1 className="text-4xl font-light font-dancing ">Šárka</h1>
           <div className="flex items-center w-1/2">
             <div className="flex-grow border-t border-violet-900 "></div>
@@ -112,9 +111,9 @@ export default function Home() {
 
       <section className="bg-base-200 bg-white flex flex-col justify-center items-center" id="details">
 
-        <section id="detaily">
+        <section id="detaily" className="sm:flex sm:flex-wrap">
             {/*CEREMONY*/}
-            <div id="ceremony" className="flex flex-wrap items-start justify-center my-20 gap-40 w-full pb-20" >
+            <div id="ceremony" className="flex flex-wrap items-start justify-center my-20 gap-40 w-full pb-20 sm:w-[40vw]" >
               <div className="basis-1/2 flex flex-col justify-center space-y-4 text-center max-w-96  sm:h-auto">
                 <div className="flex justify-center mb-3)">
                   <Image
@@ -158,7 +157,7 @@ export default function Home() {
 
 
               {/*PARTY*/}
-              <div id="party" className="flex flex-wrap items-start justify-center my-20 gap-40 w-full" >
+              <div id="party" className="flex flex-wrap items-start justify-center my-20 gap-40 w-full sm:w-[40vw]" >
                 <div className="basis-1/2 flex flex-col justify-start space-y-4 text-center max-w-96 h-[90vh] sm:h-auto">
                   <div className="flex justify-center mb-3">
                     <Image
@@ -201,7 +200,7 @@ export default function Home() {
               </div>
 
           {/*ACCOMODATION*/}
-          <div id="accomodation" className="flex flex-wrap items-start justify-center my-20 gap-40 w-full" >
+          <div id="accomodation" className="flex flex-wrap items-start justify-center my-20 gap-40 w-full sm:w-[40vw]" >
             <div className="basis-1/2 flex flex-col justify-start space-y-4 text-center max-w-96 h-[90vh] sm:h-auto">
               <div className="flex justify-center mb-3">
                 <Image
@@ -241,7 +240,7 @@ export default function Home() {
           </div>
 
           {/*GIFT*/}
-          <div id="gift" className="flex flex-wrap items-start justify-center my-20 gap-40 w-full" >
+          <div id="gift" className="flex flex-wrap items-start justify-center my-20 gap-40 w-full sm:w-[40vw]" >
             <div className="basis-1/2 flex flex-col justify-start space-y-4 text-center max-w-96 h-[90vh] sm:h-auto">
               <div className="flex justify-center mb-3">
                 <Image
@@ -277,7 +276,7 @@ export default function Home() {
           </div>
 
           {/*Gallery*/}
-          <div id="gallery" className="flex flex-wrap items-start justify-center my-20 gap-40 w-full" >
+          <div id="gallery" className="flex flex-wrap items-start justify-center my-20 gap-40 w-full sm:w-[40vw]" >
             <div className="basis-1/2 flex flex-col justify-start space-y-4 text-center max-w-96 ">
               <div className="flex justify-center mb-3">
                 <Image

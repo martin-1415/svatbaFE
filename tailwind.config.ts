@@ -10,7 +10,7 @@ export default {
 
     extend: {
       spacing: {
-        'header': '60px',
+        'header': '60px', // hardcoded min-h-[calc(100vh-120px)] must be changed when changed this property
       },
       colors: {
         background: "var(--background)",
