@@ -16,6 +16,7 @@ export default function Navigation() {
                 <a href="/party"> Svatební zábava</a>
                 <a href="/accomodation"> Ubytování</a>
                 <a href="/gifts"> Svatební dary</a>
+                <a href="/gallery"> Gallerie</a>
             </div>
 
         </div>

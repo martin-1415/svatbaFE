@@ -98,7 +98,7 @@ export default function Home() {
           ) : (
               <div className=" px-10 text-center">
                 Na těchto stránkách naleznete informace o naší svatbě. Pokud patříte mezi pozvané VIP lidi,
-                pravděpodobně jsme vám poslali odkaz obsahující kód se který vás automaticky přihlásí na tyto stránky.
+                pravděpodobně jsme vám poslali odkaz obsahující kód, který vás automaticky přihlásí na tyto stránky.
               </div>
           )}
 
@@ -242,7 +242,7 @@ export default function Home() {
 
           {/*GIFT*/}
           <div id="gift" className="flex flex-wrap items-start justify-center my-20 gap-40 w-full" >
-            <div className="basis-1/2 flex flex-col justify-start space-y-4 text-center max-w-96 ">
+            <div className="basis-1/2 flex flex-col justify-start space-y-4 text-center max-w-96 h-[90vh] sm:h-auto">
               <div className="flex justify-center mb-3">
                 <Image
                     src="/giftb.png"
@@ -275,6 +275,44 @@ export default function Home() {
               </div>
             </div>
           </div>
+
+          {/*Gallery*/}
+          <div id="gallery" className="flex flex-wrap items-start justify-center my-20 gap-40 w-full" >
+            <div className="basis-1/2 flex flex-col justify-start space-y-4 text-center max-w-96 ">
+              <div className="flex justify-center mb-3">
+                <Image
+                    src="/galleryb.png"
+                    alt="gallery"
+                    width={300}
+                    height={300}
+                    className="w-28 rounded-xl"
+                />
+              </div>
+              <h2 className="text-xl font-bold text-violet-900">Galerie</h2>
+              <p className="text-md text-gray-800">Fotky po svatbě</p>
+              <div className="flex justify-center items-center">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    className="h-10 w-10 text-gray-800"
+                >
+                  <path
+                      fillRule="evenodd"
+                      d="m11.54 22.351.07.04.028.016a.76.76 0 0 0 .723 0l.028-.015.071-.041a16.975 16.975 0 0 0 1.144-.742 19.58 19.58 0 0 0 2.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 0 0-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 0 0 2.682 2.282 16.975 16.975 0 0 0 1.145.742ZM12 13.5a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"
+                      clipRule="evenodd"
+                  />
+                </svg>
+              </div>
+              <div className="mt-auto">
+                <ButtonInfo
+                    title="Více informací"
+                    url="/gallery"
+                />
+              </div>
+            </div>
+          </div>
+
         </section>
 
       </section>
