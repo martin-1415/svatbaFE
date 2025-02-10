@@ -13,9 +13,9 @@ export default function FormJoinWedding({ visitor }:VisitorProps ) {
     const [ppl, setPpl] = useState<number | string>('');
     const [children, setChildren] = useState<number| string>('');
     const [oid, setOid] = useState<string>('');
-    const [ceremony, setCeremony] = useState<boolean>();
-    const [party, setParty] = useState<boolean>();
-    const [notAttending, setNotAttending] = useState<boolean>();
+    const [ceremony, setCeremony] = useState<boolean>(false);
+    const [party, setParty] = useState<boolean>(false);
+    const [notAttending, setNotAttending] = useState<boolean>(false);
 
     useEffect(() => {
         setChildren(visitor?.weddingForm?.children ?? '');
