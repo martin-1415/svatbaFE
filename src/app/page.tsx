@@ -97,7 +97,7 @@ export default function Home() {
         <div className="flex flex-col items-center space-y-10 my-10">
 
           {visitor ? (
-              <div className=" px-10 text-center">
+              <div className=" px-10 text-center text-2xl">
                 {visitor?.welcomeMessage} pozvali na naši svatbu, která se bude konat <b>9.srpna 2025</b>.
                 Veškeré informace najdeš níže. Předem Ti děkujeme za potvrzení a vyplnění
                 formuláře.

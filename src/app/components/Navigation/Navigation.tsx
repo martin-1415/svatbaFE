@@ -1,5 +1,6 @@
 import BurgerMenu from "@/app/components/BurgerMenu/BurgerMenu";
 import "./Navigation.css"
+import Link from "next/link";
 
 export default function Navigation() {
     return (
@@ -11,8 +12,9 @@ export default function Navigation() {
 
             <div className="hidden relative top-6 font-bold md:text-2xl
                               sm:flex sm:flex-row sm:justify-evenly ">
+                {/*text shaddow is not supported by tailwind*/}
                 {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
-                <a href="/" >Úvod</a>
+                <a href="/">Úvod</a>
                 <a href="/ceremony"> Obřad</a>
                 <a href="/party"> Svatební zábava</a>
                 <a href="/accomodation"> Ubytování</a>
