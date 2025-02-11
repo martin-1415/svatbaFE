@@ -1,6 +1,5 @@
 import BurgerMenu from "@/app/components/BurgerMenu/BurgerMenu";
 import "./Navigation.css"
-import Link from "next/link";
 
 export default function Navigation() {
     return (
