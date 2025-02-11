@@ -39,7 +39,7 @@ export default function RootLayout({
         </div>
 
         <main>
-            <div className="sm:px-20 sm:py-2 min-h-[calc(100vh-120px)]">
+            <div className="min-h-[calc(100vh-120px)] sm:px-10 sm:py-2 ">
                 {children}
             </div>
         </main>

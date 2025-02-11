@@ -56,23 +56,23 @@ export default function Home() {
   return (
     <div className="relative ">
       <section className="bg-base-100 sm:flex sm:flex-row" >
-        <div className="relative w-full overflow-hidden sm:h-[40vw] sm:w-auto">
+        <div className="relative w-full overflow-hidden sm:w-[50%] sm:h-auto">
           <Image
             src="/title.png"
             alt="Family Photo"
-            width={1920}
-            height={1080}
+            width={991}
+            height={999}
             className="w-full opacity-50 sm:h-full sm:w-auto"
           />
-          <div className="absolute -right-12 rounded-full bg-gray-300  p-6 z-10 top-1/2  w-[55vw] h-24  text-center shadow-xl sm:w-[25vw] sm:p-4 sm:h-auto">
+          <div className="absolute -right-12 rounded-full bg-gray-300  p-6 z-10 top-1/2  w-[55vw] h-24  text-center shadow-xl sm:w-[20vw] sm:p-4 sm:h-auto">
             <div className=" pr-8 font-dancing text-violet-900  ">Tak dlouho se hledali, </div>
             <div className=" pr-8 font-dancing text-violet-900  ">až na sebe zbyli.</div>
           </div>
 
-          <div className="absolute bottom-8 left-4 pr-8 text-2xl font-dancing text-violet-900 text-left sm:bottom-1">A řeknou si své ANO.</div>
+          {/*<div className="absolute bottom-8 left-4 pr-8 text-2xl font-dancing text-violet-900 text-left sm:bottom-1">A řeknou si své ANO.</div>*/}
         </div>
 
-        <div className="  w-full bg-violet-200 text-violet-900 flex flex-col items-center px-4 py-4 space-y-10 text-center sm:h-[40vw] sm:w-[40vw] sm:mx-6 sm:p-[6em]">
+        <div className="  w-full bg-violet-200 text-violet-900 flex flex-col items-center px-4 py-4 space-y-10 text-center sm:hidden">
           <h1 className="text-4xl font-light font-dancing ">Šárka</h1>
           <div className="flex items-center w-1/2">
             <div className="flex-grow border-t border-violet-900 "></div>
@@ -81,10 +81,15 @@ export default function Home() {
           </div>
           <h1 className="text-4xl font-dancing">Martin</h1>
         </div>
+
+        <div className="hidden sm:block sm:w-[50%]">
+          <OurDay/>
+        </div>
+
       </section>
 
       <section>
-        <h1 className="text-4xl font-dancing px-16 py-6 text-violet-900">ANO si řekneme přesně za ...</h1>
+        <h1 className="text-4xl font-dancing px-16 py-6 text-violet-900">ANO si řeknou přesně za ...</h1>
         <Countdown />
         <div className="flex flex-col items-center space-y-10 my-10">
 
@@ -107,52 +112,56 @@ export default function Home() {
         {visitor && <FormJoinWedding visitor={visitor} />}
       </section>
 
-      <OurDay/>
+      <div className="sm:hidden">
+        <OurDay/>
+      </div>
+
 
       <section className="bg-base-200 bg-white flex flex-col justify-center items-center" id="details">
 
         <section id="detaily" className="sm:flex sm:flex-wrap">
-            {/*CEREMONY*/}
-            <div id="ceremony" className="flex flex-wrap items-start justify-center my-20 gap-40 w-full pb-20 sm:w-[40vw]" >
-              <div className="basis-1/2 flex flex-col justify-center space-y-4 text-center max-w-96  sm:h-auto">
-                <div className="flex justify-center mb-3)">
-                  <Image
+          {/*Ceremony*/}
+          <div id="ceremony" className="flex flex-wrap items-start justify-center my-20 gap-40 w-full sm:w-[40vw]" >
+            <div className="basis-1/2 flex flex-col justify-start space-y-4 text-center max-w-96 h-[90vh] sm:h-auto">
+              <div className="flex justify-center mb-3">
+                <Image
                     src="/ceremonyb.png"
-                    alt="Ceremony"
+                    alt="Celebration"
                     width={300}
                     height={300}
                     className="w-28 rounded-xl"
-                  />
-                </div>
-                <h2 className="text-xl font-bold text-violet-900">Obřad</h2>
-                <p className="text-md font-extrabold text-gray-800">9.8.2025 11:30 </p>
-                <p className="text-md text-gray-600">Zámek Dub</p>
-                <div className="flex justify-center items-center">
-                  <svg
+                />
+              </div>
+              <h2 className="text-xl font-bold text-violet-900" >Obřad</h2>
+              <p className="text-md font-extrabold text-gray-800">
+                9.8.2025 11:30
+              </p>
+              <p className="text-md text-gray-600">Zámek Dub</p>
+              <div className="flex justify-center items-center">
+                <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
                     fill="currentColor"
                     className="h-10 w-10 text-gray-800"
-                  >
-                    <path
+                >
+                  <path
                       fillRule="evenodd"
                       d="m11.54 22.351.07.04.028.016a.76.76 0 0 0 .723 0l.028-.015.071-.041a16.975 16.975 0 0 0 1.144-.742 19.58 19.58 0 0 0 2.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 0 0-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 0 0 2.682 2.282 16.975 16.975 0 0 0 1.145.742ZM12 13.5a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"
                       clipRule="evenodd"
-                    />
-                  </svg>
-                </div>
-                <p className="text-md text-gray-800 ">
-                  Adresa: Dub 1, 384 25 Dub
-                </p>
-                <div className="mt-auto">
-                  <ButtonInfo
+                  />
+                </svg>
+              </div>
+              <p className="text-md text-gray-800 ">
+                Adresa: Dub 1, 384 25 Dub
+              </p>
+              <div className="mt-auto">
+                <ButtonInfo
                     title="Více informací"
                     url="/ceremony"
-                  />
-                </div>
+                />
               </div>
             </div>
-
+          </div>
 
 
 
@@ -251,7 +260,7 @@ export default function Home() {
                     className="w-28 rounded-xl"
                 />
               </div>
-              <h2 className="text-xl font-bold">Svatební dary</h2>
+              <h2 className="text-xl font-bold text-violet-900">Svatební dary</h2>
               <div className="flex justify-center items-center">
                 <svg
                     xmlns="http://www.w3.org/2000/svg"

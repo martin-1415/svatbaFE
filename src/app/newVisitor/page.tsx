@@ -49,11 +49,11 @@ export default function Page() {
 
     return (
         <form  className="p-6" onSubmit={onSubmit}>
-            <div className="m-2">
+            <div className="m-2 border-2 m-2">
                 <input name="name"/>
                 <label htmlFor="name"> Jméno</label>
             </div>
-            <div className="m-2">
+            <div className="m-2 border-2 m-2">
                 <input name="welcomeMessage"/>
                 <label htmlFor="welcomeMessage ">Uvítací zpráva (...pozvali na)</label>
             </div>
