@@ -49,25 +49,57 @@ export default function Page() {
 
     return (
         <form  className="p-6" onSubmit={onSubmit}>
-            <div className="m-2 border-2 m-2">
-                <input name="name"/>
+            <div className="m-2">
+                <input name="name" className=" border-2 m-1"/>
                 <label htmlFor="name"> Jméno</label>
             </div>
-            <div className="m-2 border-2 m-2">
-                <input name="welcomeMessage"/>
+            <div className="m-2">
+                <input name="welcomeMessage" className=" border-2 m-1"/>
                 <label htmlFor="welcomeMessage ">Uvítací zpráva (...pozvali na)</label>
             </div>
             <button type="submit" className="bg-blue-500 text-white rounded-md px-2 py-1">Odeslat</button>
 
-            {listOfVisitors && listOfVisitors.length > 0 ? (
-                listOfVisitors.map((visitor) => (
-                    <ul key={visitor._id.$oid}>
-                        <li><a className="text-blue-600" href={process.env.NEXT_PUBLIC_URL!.concat('?id=').concat(visitor._id.$oid)}>{process.env.NEXT_PUBLIC_URL!.concat('?id=').concat(visitor._id.$oid)}</a>  {visitor.name}     {visitor.welcomeMessage}   </li>
-                    </ul>
-                ))
-            ) : (
-                <p>Loading...</p>
-            )}
+            <table className="m-4">
+                <thead>
+                    <th>Jméno</th>
+                    <th>Účast</th>
+                    <th>Počet dospělých</th>
+                    <th>Počet dětí</th>
+                    <th>Obřad</th>
+                    <th>Hostina</th>
+                    <th>Url</th>
+                    <th>Uvítací zpráva</th>
+                </thead>
+                <tbody>
+                    {listOfVisitors && (
+                        listOfVisitors.map((visitor) => (
+                                <tr key={visitor._id.$oid}>
+                                   <td>  {visitor.name} </td>
+                                    <td>
+                                        {visitor?.weddingForm?.notAttending && '✕' }
+                                    </td>
+                                    <td>
+                                        {visitor?.weddingForm?.ppl}
+                                    </td>
+                                    <td>
+                                        {visitor?.weddingForm?.children}
+                                    </td>
+
+                                    <td>
+                                        {visitor?.weddingForm?.ceremony && '✓'}
+                                    </td>
+                                    <td>
+                                        {visitor?.weddingForm?.party && '✓'}
+                                    </td>
+                                    <td>
+                                       <a className="text-blue-600" href={process.env.NEXT_PUBLIC_URL!.concat('?id=').concat(visitor._id.$oid)}>{process.env.NEXT_PUBLIC_URL!.concat('?id=').concat(visitor._id.$oid)}</a>
+                                    </td>
+                                    <td> {visitor.welcomeMessage}</td>
+                                </tr>
+                        ))
+                    )}
+              </tbody>
+            </table>
 
          </form>
     )
