@@ -57,6 +57,7 @@ export default function Home() {
     <div className="relative ">
       <section className="bg-base-100 sm:flex sm:flex-row" >
         <div className="relative w-full overflow-hidden sm:w-[50%] sm:h-auto">
+
           <Image
             src="/title.png"
             alt="Family Photo"
@@ -64,10 +65,12 @@ export default function Home() {
             height={999}
             className="w-full opacity-50 sm:h-full sm:w-auto"
           />
-          <div className="absolute -right-12 rounded-full bg-gray-300  p-6 z-10 top-1/2  w-[55vw] h-24  text-center shadow-xl sm:w-[20vw] sm:p-4 sm:h-auto">
+          <div className="absolute -right-12 rounded-full bg-gray-300  p-6 z-10 top-1/2  w-[55vw] h-24  text-center shadow-xl sm:w-[30vw] sm:p-4 sm:h-auto sm:text-2xl">
             <div className=" pr-8 font-dancing text-violet-900  ">Tak dlouho se hledali, </div>
             <div className=" pr-8 font-dancing text-violet-900  ">až na sebe zbyli.</div>
           </div>
+
+
 
           {/*<div className="absolute bottom-8 left-4 pr-8 text-2xl font-dancing text-violet-900 text-left sm:bottom-1">A řeknou si své ANO.</div>*/}
         </div>

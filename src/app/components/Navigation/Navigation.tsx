@@ -9,7 +9,7 @@ export default function Navigation() {
                 <BurgerMenu/>
             </div>
 
-            <div className="hidden relative top-6 font-bold
+            <div className="hidden relative top-6 font-bold md:text-2xl
                               sm:flex sm:flex-row sm:justify-evenly ">
                 {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
                 <a href="/" >Úvod</a>
