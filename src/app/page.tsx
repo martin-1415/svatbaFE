@@ -117,9 +117,8 @@ export default function Home() {
       </div>
 
 
-      <section className="bg-base-200 bg-white flex flex-col justify-center items-center" id="details">
+      <section id="details" className=" mx-auto flex flex-col justify-center items-center sm:flex sm:flex-row sm:flex-wrap" >
 
-        <section id="detaily" className="sm:flex sm:flex-wrap">
           {/*Ceremony*/}
           <div id="ceremony" className="flex flex-wrap items-start justify-center my-20 gap-40 w-full sm:w-[40vw]" >
             <div className="basis-1/2 flex flex-col justify-start space-y-4 text-center max-w-96 h-[90vh] sm:h-auto">
@@ -320,8 +319,6 @@ export default function Home() {
               </div>
             </div>
           </div>
-
-        </section>
 
       </section>
     </div>
