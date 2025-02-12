@@ -3,9 +3,11 @@
 import { FormEvent } from 'react'
 import { useEffect, useState } from "react";
 import {IVisitor} from "../model/IVisitor";
+import {IStatistics} from "@/app/model/IStatistics";
 
 export default function Page() {
     const [listOfVisitors, setData] = useState< IVisitor[] | null>(null);
+    const [statistics, setStat] = useState< IStatistics | null>(null);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -16,8 +18,16 @@ export default function Page() {
             } catch (error) {
                 console.error("Error fetching data:", error);
             }
-        };
 
+
+            try {
+                const response = await fetch(process.env.NEXT_PUBLIC_API_URL!.concat('/getStat'));
+                const stat:IStatistics = await response.json();
+                setStat(stat);
+            } catch (error) {
+                console.error("Error fetching statistics:", error);
+            }
+        }
         fetchData();
     }, []);
 
@@ -59,16 +69,25 @@ export default function Page() {
             </div>
             <button type="submit" className="bg-blue-500 text-white rounded-md px-2 py-1">Odeslat</button>
 
+            <div className="m-1">
+                Počet lidí: {statistics?.totalPpl}
+            </div>
+            <div className="m-1">
+                Počet dětí: {statistics?.totalChildren}
+            </div>
+
             <table className="m-4">
                 <thead>
-                    <th>Jméno</th>
-                    <th>Účast</th>
-                    <th>Počet dospělých</th>
-                    <th>Počet dětí</th>
-                    <th>Obřad</th>
-                    <th>Hostina</th>
-                    <th>Url</th>
-                    <th>Uvítací zpráva</th>
+                    <tr>
+                        <th>Jméno</th>
+                        <th>Účast</th>
+                        <th>Počet dospělých</th>
+                        <th>Počet dětí</th>
+                        <th>Obřad</th>
+                        <th>Hostina</th>
+                        <th>Url</th>
+                        <th>Uvítací zpráva</th>
+                    </tr>
                 </thead>
                 <tbody>
                     {listOfVisitors && (
