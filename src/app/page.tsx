@@ -59,7 +59,7 @@ export default function Home() {
         <div className="relative w-full overflow-hidden sm:w-[50%] sm:h-auto">
 
           <Image
-            src="/title.png"
+            src="/title.webp"
             alt="Family Photo"
             width={991}
             height={999}

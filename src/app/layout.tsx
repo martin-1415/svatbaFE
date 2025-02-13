@@ -3,7 +3,12 @@ import {  Dancing_Script } from "next/font/google";
 import "./globals.css";
 import Navigation from "@/app/components/Navigation/Navigation";
 
+import type { Metadata } from 'next'
 
+export const metadata: Metadata = {
+    title: 'Svatba Martin & Šárka',
+    description: 'Pozvánka na naši svatbu!',
+}
 
 const dancingScript = Dancing_Script({
   variable: "--font-dancing",
@@ -20,7 +25,6 @@ export default function RootLayout({
   return (
     <html lang="en" data-theme="light" className="scroll-smooth">
       <head>
-        <title>Svatba Martin & Šárka</title>
         <meta charSet="UTF-8" />
         <link
             href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap"
