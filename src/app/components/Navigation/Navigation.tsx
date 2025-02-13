@@ -9,11 +9,11 @@ export default function Navigation() {
                 <BurgerMenu/>
             </div>
 
-            <div className="hidden relative top-6 font-bold md:text-2xl
+            <div className="hidden relative p-2 font-bold md:text-2xl
                               sm:flex sm:flex-row sm:justify-evenly text-gray-200">
                 {/*text shaddow is not supported by tailwind*/}
                 {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
-                <a href="/" className="nav hover:text-gray-500">Úvod</a>
+                <a href="/" className="nav hover:text-gray-500 ">Úvod</a>
                 <a href="/ceremony" className="nav hover:text-gray-500"> Obřad</a>
                 <a href="/party" className="nav hover:text-gray-500"> Svatební zábava</a>
                 <a href="/accomodation" className="nav hover:text-gray-500"> Ubytování</a>
