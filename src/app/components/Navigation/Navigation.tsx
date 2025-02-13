@@ -10,15 +10,15 @@ export default function Navigation() {
             </div>
 
             <div className="hidden relative top-6 font-bold md:text-2xl
-                              sm:flex sm:flex-row sm:justify-evenly ">
+                              sm:flex sm:flex-row sm:justify-evenly text-gray-200">
                 {/*text shaddow is not supported by tailwind*/}
                 {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
-                <a href="/">Úvod</a>
-                <a href="/ceremony"> Obřad</a>
-                <a href="/party"> Svatební zábava</a>
-                <a href="/accomodation"> Ubytování</a>
-                <a href="/gifts"> Svatební dary</a>
-                <a href="/gallery"> Gallerie</a>
+                <a href="/" className="nav hover:text-gray-500">Úvod</a>
+                <a href="/ceremony" className="nav hover:text-gray-500"> Obřad</a>
+                <a href="/party" className="nav hover:text-gray-500"> Svatební zábava</a>
+                <a href="/accomodation" className="nav hover:text-gray-500"> Ubytování</a>
+                <a href="/gifts" className="nav hover:text-gray-500"> Svatební dary</a>
+                <a href="/gallery" className="nav hover:text-gray-500"> Gallerie</a>
             </div>
 
         </div>

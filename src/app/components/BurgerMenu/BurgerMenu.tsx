@@ -21,8 +21,8 @@ export default function BurgerMenu() {
                 <div className="bar3"></div>
             </div>
 
-            <div className={` height-animation absolute top-header right-0 list-image-none ${isActive ? '' : 'hidden'} bg-gray-100 z-10`}>
-                <ul>
+            <div className={` height-animation absolute top-header right-0 list-image-none ${isActive ? '' : 'hidden'} bg-gray-100 `}>
+                <ul className="z-10">
                     {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
                     <li className="p-2" ><a href="/"> Úvod</a></li>
                     <li className="p-2" ><a href="/ceremony"> Obřad</a></li>

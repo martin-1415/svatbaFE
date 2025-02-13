@@ -5,11 +5,11 @@ export default function  OurDay() {
 
 
 return(
-            <div className="py-4  px-4  sm:px-0">
+            <div className="py-4  px-4  sm:bg-gray-300   sm:h-full sm:px-0">
                 <div className="text-6xl font-dancing text-violet-900 text-center sm:text-4xl lg:text-6xl">Náš velký den</div>
 
-                <div className="relative bg-image-wrapper p-6 min-h-[350px]  sm:leading-[2]  md:text-base lg:text-3xl ">
-                    <span className="text-violet-900">LEVANDULE</span> je květina, která naši
+                <div className="relative bg-image-wrapper  p-6  sm:flex-1 sm:text-sm  md:text-base lg:text-2xl ">
+                    <span className="text-violet-900 ">LEVANDULE</span> je květina, která naši
                     svatbu bude provázet. Její
                     charakteristická vůně, nádherná
                     nachová barva, lehkost,
