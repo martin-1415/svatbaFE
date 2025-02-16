@@ -54,9 +54,9 @@ export default function Home() {
   }
 
   return (
-    <div className="relative ">
+    <div>
       <section  id="imageAndGrayDiv"  className="bg-[url(/dekor.jpg)]">
-        <div  className="relative   w-full overflow-hidden sm:w-[50%] sm:h-auto sm:mx-auto">
+        <div  className="w-full  sm:w-[50%] sm:h-auto sm:mx-auto">
 
           <Image
             src="/title.png"
@@ -65,10 +65,6 @@ export default function Home() {
             height={999}
             className="w-full sm:flex-shrink-0 sm:object-contain  sm:w-auto"
           />
-          <div className="absolute -right-12 rounded-full bg-gray-300  p-6 top-1/2  w-[55vw] h-24  text-center shadow-xl sm:w-[30vw] sm:p-4 sm:h-auto sm:text-2xl">
-            <div className=" pr-8 font-dancing text-violet-900  ">Tak dlouho se hledali, </div>
-            <div className=" pr-8 font-dancing text-violet-900  ">až na sebe zbyli.</div>
-          </div>
 
         </div>
 
