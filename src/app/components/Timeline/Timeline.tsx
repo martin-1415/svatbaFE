@@ -36,10 +36,7 @@ export default function Timeline() {
 
                 <TimelineItem date={'2018'} text={'Martin si zamiluje film Pan a Paní Adelmanovi a hlavně její představitelku Doriu Tillier. '} imgUrl={'tillier.png'}  sex={SexEnum.y}/>
 
-                <TimelineItem date={'2018'} text={'Otráven samotou, Martin píše svědkyni, která pracuje ve školce, zda pro něj v práci nemá nějakou učitelku. Nejlíp s ostrym nosem. "Máme, ale má 180 cm a je zadaná", zněla odpověď.'} imgUrl={'sarka.png'}  sex={SexEnum.y}/>
-
-                <TimelineItem date={'2018'} text={'A tak po pár bavorskejch pivech, Martin píše motivační dopis, proč by pro Šárku chtěl pracovat. A že její školka ' +
-                    'nutně potřebuje jeho IT řešení.'}   sex={SexEnum.y}/>
+                <TimelineItem date={'2018'} text={'Otráven samotou, Martin píše svědkyni, která pracuje ve školce, zda pro něj v práci nemá nějakou učitelku. Nejlíp s ostrym nosem. "Máme, ale je to ředitelka, má 180 cm a je zadaná", zněla odpověď.'} imgUrl={'sarka.png'}  sex={SexEnum.y}/>
 
                 <TimelineItem date={'2018'} text={'A tak po pár bavorskejch pivech, Martin píše motivační dopis, proč by pro Šárku chtěl pracovat. A že její školka ' +
                     'nutně potřebuje jeho IT řešení.'}   sex={SexEnum.y}/>

@@ -9,10 +9,12 @@ export default function TimelineItem({date,text,imgUrl,sex}:IItemProps) {
 
     let bgcolor:string = 'bg-gray-200';
     let iconColor:string = 'bg-gray-200';
+    let name:string = 'Martin';
 
     if(sex == SexEnum.x){
         bgcolor='bg-indigo-100';
         iconColor='bg-indigo-100';
+        name= 'Šárka';
     }
 
     return (
@@ -29,7 +31,7 @@ export default function TimelineItem({date,text,imgUrl,sex}:IItemProps) {
         </div>
         {/* Card  -->*/}
         <div className={ `${bgcolor} w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-4 rounded border border-slate-200 shadow`}>
-            <div className="font-caveat font-medium text-indigo-500">{date}</div>
+            <div className="font-caveat font-medium text-indigo-500">{name}{date}</div>
             <div className="text-slate-500">{text}</div>
             {imgUrl &&
                 <img src={'/gallery/timeline/'.concat(imgUrl)} alt='mini foto'
@@ -47,7 +49,7 @@ export default function TimelineItem({date,text,imgUrl,sex}:IItemProps) {
             >
                 <div className="relative">
                     <button
-                        className="absolute -top-4 -right-4 bg-white text-black rounded-full p-2 shadow-md hover:bg-gray-300"
+                        className="absolute -top-4 right-2 bg-white text-black rounded-full px-3 py-1 shadow-md hover:bg-gray-300"
                         onClick={() => setIsOpen(false)}
                     >
                         ✖
