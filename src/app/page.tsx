@@ -55,24 +55,21 @@ export default function Home() {
 
   return (
     <div className="relative ">
-      <section className="sm:flex sm:flex-row" >
-        <div className="relative w-full overflow-hidden sm:w-[50%] sm:h-auto">
+      <section  id="imageAndGrayDiv"  className="bg-[url(/dekor.jpg)]">
+        <div  className="relative   w-full overflow-hidden sm:w-[50%] sm:h-auto sm:mx-auto">
 
           <Image
             src="/title.png"
             alt="Family Photo"
             width={991}
             height={999}
-            className="w-full opacity-50 sm:flex-shrink-0 sm:object-contain  sm:w-auto"
+            className="w-full sm:flex-shrink-0 sm:object-contain  sm:w-auto"
           />
           <div className="absolute -right-12 rounded-full bg-gray-300  p-6 top-1/2  w-[55vw] h-24  text-center shadow-xl sm:w-[30vw] sm:p-4 sm:h-auto sm:text-2xl">
             <div className=" pr-8 font-dancing text-violet-900  ">Tak dlouho se hledali, </div>
             <div className=" pr-8 font-dancing text-violet-900  ">až na sebe zbyli.</div>
           </div>
 
-
-
-          {/*<div className="absolute bottom-8 left-4 pr-8 text-2xl font-dancing text-violet-900 text-left sm:bottom-1">A řeknou si své ANO.</div>*/}
         </div>
 
         <div className="  w-full bg-violet-200 text-violet-900 flex flex-col items-center px-4 py-4 space-y-10 text-center sm:hidden">
@@ -85,16 +82,16 @@ export default function Home() {
           <h1 className="text-4xl font-dancing">Martin</h1>
         </div>
 
-        <div className="hidden sm:block sm:w-[50%]">
-          <OurDay/>
-        </div>
+        {/*<div className="hidden sm:block sm:w-[50%]">*/}
+        {/*  <OurDay/>*/}
+        {/*</div>*/}
 
       </section>
 
       <section>
         <h1 className="text-4xl font-dancing px-16 py-6 text-violet-900">ANO si řeknou přesně za ...</h1>
         <Countdown />
-        <div className="flex flex-col items-center space-y-10 my-10">
+        <div className="flex flex-col items-center space-y-10 my-10 text-2xl">
 
           {visitor ? (
               <div className=" px-10 text-center text-2xl">

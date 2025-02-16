@@ -9,22 +9,21 @@ export default function TimelineItem({date,text,imgUrl,sex}:IItemProps) {
 
     let bgcolor:string = 'bg-gray-200';
     let iconColor:string = 'bg-gray-200';
-    let name:string = 'Martin, ';
+    let name:string = 'Martin ';
 
     if(sex == SexEnum.x){
         bgcolor='bg-indigo-100';
         iconColor='bg-indigo-100';
-        name= 'Šárka, ';
+        name= 'Šárka ';
     }
 
     return (
 
-    <div className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+        <div className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
         {/* Icon  -->*/}
         <div
-            className={` ${iconColor} flex items-center justify-center w-10 h-10 rounded-full border
-                      border-white bg-slate-300  text-slate-500  shadow shrink-0
-                        md:relative md:group-even:-right-[calc(15%)] md:group-odd:right-[calc(15%)]  md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2`}>
+            className={` ${iconColor} flex items-center justify-center w-10 h-10 rounded-full border 
+                        border-white bg-slate-300  text-slate-500  shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2`}>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
                  className="w-3.5 h-3.5">
                 <path
@@ -32,12 +31,12 @@ export default function TimelineItem({date,text,imgUrl,sex}:IItemProps) {
             </svg>
         </div>
         {/* Card  -->*/}
-        <div className={ `${bgcolor} w-[calc(100%-4rem)] md:relative md:w-[calc(35%-2.5rem)] md:group-even:-right-[calc(15%)] md:group-odd:right-[calc(15%)] p-4 rounded border border-slate-200 shadow`}>
-            <div className="font-caveat font-medium text-indigo-500">{name}{date}</div>
+        <div className={ `${bgcolor} w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-4 rounded border border-slate-200 shadow sm:max-w-[500px]`}>
+            <div className="font-caveat font-medium text-indigo-500">{name} {date}</div>
             <div className="text-slate-500">{text}</div>
             {imgUrl &&
                 <img src={'/gallery/timeline/'.concat(imgUrl)} alt='mini foto'
-                     className="cursor-pointer mt-2 rounded-md shadow-md transition-transform hover:scale-105"
+                     className="cursor-pointer mt-2 rounded-md shadow-md transition-transform hover:scale-105 sm:max-h-72"
                      onClick={() => setIsOpen(true)}
                 /> }
         </div>

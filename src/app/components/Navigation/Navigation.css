@@ -1,4 +1,7 @@
 
-a.nav{
-    text-shadow: 1px 1px 2px #000000;
+.segment{
+
+    width: 2px;
+    background-color: white;
+
 }
