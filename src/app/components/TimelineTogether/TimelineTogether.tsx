@@ -18,7 +18,7 @@ export default function TimelineTogether() {
 
             <TimelineTogetherItem date={'2024'} text={'Zásnuby.'}  imgUrl={'zasnuby.png'}  />
 
-            <TimelineTogetherItem date={'2024'} text={'A svatbou naše dobrodružství teprve začíná !'}   />
+            <TimelineTogetherItem date={'2024'} text={'A svatbou naše dobrodružství teprve začíná !'} imgUrl={'rodina.png'}   />
 
 
         </div>
