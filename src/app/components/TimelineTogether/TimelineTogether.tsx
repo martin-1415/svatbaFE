@@ -8,7 +8,7 @@ export default function TimelineTogether() {
         <div className="space-y-8 mx-auto py-7">
 
 
-            <TimelineTogetherItem date={'2018'} text={'Dvě pracovní schůzky, první rande. Naše první polečné foto a od teď už jen společně.'} imgUrl={'selfie.jpg'} />
+            <TimelineTogetherItem date={'2018'} text={'Dvě pracovní schůzky, první rande. Naše první polečné foto a od teď už jen společně.'} imgUrl={'self.jpg'} />
 
             <TimelineTogetherItem date={'2020'} text={'Narození Laury 17.1.2020'}  imgUrl={'laura.png'}  />
 
