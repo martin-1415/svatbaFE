@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function Page() {
     return(
         <div>
-            <div className="detailTitle">Gallerie</div>
+            <div className="detailTitle">Galerie</div>
 
             <div className="detailText">
                 <p>

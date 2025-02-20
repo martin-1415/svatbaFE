@@ -63,7 +63,7 @@ export default function Home() {
             alt="Family Photo"
             width={991}
             height={999}
-            className="w-full sm:flex-shrink-0 sm:object-contain  sm:w-auto"
+            className="w-full sm:flex-shrink-0 sm:object-contain  sm:w-auto sm:mx-auto "
           />
 
         </div>
@@ -242,6 +242,42 @@ export default function Home() {
               </div>
             </div>
           </div>
+
+        {/*about*/}
+        <div id="gift" className="flex flex-wrap items-start justify-center my-20 gap-40 w-full sm:w-[40vw]" >
+          <div className="basis-1/2 flex flex-col justify-start space-y-4 text-center max-w-96 h-[90vh] sm:h-auto">
+            <div className="flex justify-center mb-3">
+              <Image
+                  src="/coupleb.png"
+                  alt="couple"
+                  width={300}
+                  height={300}
+                  className="w-28 rounded-xl"
+              />
+            </div>
+            <h2 className="text-xl font-bold text-violet-900">O nás dvou</h2>
+            <div className="flex justify-center items-center">
+              <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  className="h-10 w-10 text-gray-800"
+              >
+                <path
+                    fillRule="evenodd"
+                    d="m11.54 22.351.07.04.028.016a.76.76 0 0 0 .723 0l.028-.015.071-.041a16.975 16.975 0 0 0 1.144-.742 19.58 19.58 0 0 0 2.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 0 0-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 0 0 2.682 2.282 16.975 16.975 0 0 0 1.145.742ZM12 13.5a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"
+                    clipRule="evenodd"
+                />
+              </svg>
+            </div>
+            <div className="mt-auto">
+              <ButtonInfo
+                  title="Více informací"
+                  url="/about"
+              />
+            </div>
+          </div>
+        </div>
 
           {/*GIFT*/}
           <div id="gift" className="flex flex-wrap items-start justify-center my-20 gap-40 w-full sm:w-[40vw]" >

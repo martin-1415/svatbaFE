@@ -11,14 +11,6 @@ export default function Page() {
                 </p>
             </div>
 
-            <h1></h1>
-
-
-
-
-                Spolecne: nerpelivost, cholerici, humor,
-                rozdil: rychlost, systematicnost, poradnost,
-
             <Timeline></Timeline>
 
             <div className="relative m-12 mx-auto flex items-center justify-center w-28 h-28 rounded-full border border-white bg-slate-300  text-slate-500  shadow shrink-0">

@@ -20,6 +20,8 @@ export default function Navigation() {
                 <a href="/party" className="hover:text-white"> Svatební zábava</a>
                     <div  className="segment"/>
                 <a href="/accomodation" className="hover:text-white"> Ubytování</a>
+                <div  className="segment"/>
+                <a href="/about" className="hover:text-white ">O nás dvou</a>
                     <div  className="segment"/>
                 <a href="/gifts" className=" hover:text-white"> Svatební dary</a>
                     <div  className="segment"/>

@@ -29,7 +29,7 @@ export default function Timeline() {
 
             <TimelineItem date={'1992'} text={'Je na tělocviku druhý nejmenší, vyniká hlavně v opičí dráze a úklidu náčiní.'} sex={SexEnum.y}/>
 
-            <TimelineItem date={'1992'} text={'Má jedinečný a charakteristický zpěvný hlas podobný vrzání pantů \n' +
+            <TimelineItem date={'2001'} text={'Má jedinečný a charakteristický zpěvný hlas podobný vrzání pantů \n' +
                 'a proto úspěšné složení talentových zkoušek a přijetí na střední pedagogickou školu považuje za velký úspěch. Možná srovnatelný s diplomem plavání.'} sex={SexEnum.x}/>
 
             <TimelineItem date={'2002'} text={'Stala se pirátem silnic v bledě modrém favoritu - získala řidičák. S tátou udělala na silnici hodiny....táta: ,,co to bylo" Šárka: ,,nic, zachránila jsem nás!"'} sex={SexEnum.x}/>
@@ -56,11 +56,13 @@ export default function Timeline() {
                 'udělat fotku s hlavním OMONátorem, s červeným nosem a amplionem.'} sex={SexEnum.y} imgUrl={'chely.png'}/>
 
             <TimelineItem date={'2013'} text={'Odjíždí na stáž do nejlepšího jaderného ruského výzkumného centra Dubno obehnaného elektickým plotem.' +
-                ' Chtěli jsme zjistit, zda je v tom opravdu elektrika, ale bylo nám líto tý kočky. '} imgUrl={'el.png'} sex={SexEnum.y}/>
+                ' Chtěli zjistit, zda je v tom opravdu elektrika, ale bylo jim líto tý kočky. '} imgUrl={'el.png'} sex={SexEnum.y}/>
 
             <TimelineItem date={'2014'} text={'Na rok odjíždí na univerzitu v Manchesteru, kterému se tam přezdívá Gaychester.'} sex={SexEnum.y} imgUrl={'manch.jpg'}/>
 
-            <TimelineItem date={'2014'} text={'15.10. se jí narodilo první "miminko", který ji posunulo život zase jiným směrem a potkala zase nové zajímavé lidi. Začala s ním cvičit, chodit na obrany a jezdit po výstavách i do zahraničí - v EU i mimo. '} sex={SexEnum.x}/>
+            <TimelineItem date={'2014'} text={'15.10. se jí narodilo první "miminko", který ji posunulo život zase' +
+                ' jiným směrem a potkala zase nové zajímavé lidi. Začala s ním cvičit, chodit na obrany a jezdit po' +
+                ' výstavách i do zahraničí - v EU i mimo. '} sex={SexEnum.x} imgUrl={'psi.png'}/>
 
 
             <TimelineItem date={'2015'} text={'Úspěšně složila kurz potápění a začala se aktivně potápět. Zamilovala se do ticha, který pod hladinou vládne a do pocitu beztíže /jak fyzické, tak psychické/'} imgUrl={'potapec.jpg'}  sex={SexEnum.x}/>

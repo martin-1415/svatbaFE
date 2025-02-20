@@ -28,6 +28,7 @@ export default function BurgerMenu() {
                     <li className="p-2" ><a href="/ceremony"> Obřad</a></li>
                     <li className="p-2"><a href="/party"> Svatební hostina</a></li>
                     <li className="p-2"><a href="/accomodation"> Ubytování</a></li>
+                    <li className="p-2" ><a href="/about"> O nás</a></li>
                     <li className="p-2"><a href="/gifts"> Svatební dary</a></li>
                     <li className="p-2"><a href="/gallery"> Galerie </a></li>
                 </ul>
