@@ -15,19 +15,20 @@ export default function Timeline() {
             <TimelineItem date={'1986'} text={'Narození 20.3.1986.'} sex={SexEnum.y} />
 
 
-            <TimelineItem date={'1990'} text={'Úplně nevyniká v plavání a ve školce dostává diplom kapra.' +
-            ' Myslí si, že želvu nikdo nikdy nedostane. Že je tam želva jen proto, aby se kapři necítili špatně.'} sex={SexEnum.y}/>
-
-
-            <TimelineItem date={'1990'} text={'Dostává za plavání ve školce želvu. Má panickou hrůzu z vody.'} sex={SexEnum.x}/>
-
-
-            <TimelineItem date={'1992'} text={'Chodí na ,,diskotance” a vystupuje s kroužkem na diskotékách a pořádaných akcích města'} sex={SexEnum.x}/>
-
-
             <TimelineItem date={'1992'} text={'Nastupuje do školy. Na tělocviku je druhá nejvyšší a vyniká hlavně ve volejbale a běhu přes překážky. '} sex={SexEnum.x}/>
 
             <TimelineItem date={'1992'} text={'Je na tělocviku druhý nejmenší, vyniká hlavně v opičí dráze a úklidu náčiní.'} sex={SexEnum.y}/>
+
+
+            <TimelineItem date={'1993'} text={'Chodí na ,,diskotance” a vystupuje s kroužkem na diskotékách a pořádaných akcích města'} sex={SexEnum.x}/>
+
+
+
+             <TimelineItem date={'1995'} text={'Úplně nevyniká v plavání a ve školce dostává diplom kapra.' +
+                    ' Myslí si, že želvu nikdo nikdy nedostane. Že je tam želva jen proto, aby se kapři necítili špatně.'} sex={SexEnum.y}/>
+
+
+             <TimelineItem date={'1995'} text={'Dostává za plavání ve školce želvu. Má panickou hrůzu z vody.'} sex={SexEnum.x}/>
 
             <TimelineItem date={'2001'} text={'Má jedinečný a charakteristický zpěvný hlas podobný vrzání pantů \n' +
                 'a proto úspěšné složení talentových zkoušek a přijetí na střední pedagogickou školu považuje za velký úspěch. Možná srovnatelný s diplomem plavání.'} sex={SexEnum.x}/>
