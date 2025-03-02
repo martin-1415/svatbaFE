@@ -48,9 +48,9 @@ export default function RootLayout({
         </main>
 
         <div id="footer" className="relative bg-violet-950 min-h-header text-white flex justify-center">
-            <div className="px-2  py-4">Design stránek: Šárka</div>
+            <div className="px-2  py-4  text-right sm:text-left">Design stránek: Šárka</div>
             <div className="px-2 py-4" >©</div>
-            <div className="px-2 py-4">Realizace stránek: Martin </div>
+            <div className="px-2 py-4 ">Realizace stránek: Martin </div>
 
         </div>
       </body>
