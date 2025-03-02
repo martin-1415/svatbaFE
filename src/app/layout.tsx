@@ -38,7 +38,6 @@ export default function RootLayout({
       <body className={`${dancingScript.variable} flex flex-col`}>
 
         <div id="header" className="h-header bg-violet-300 ">
-          {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
             <Navigation />
         </div>
 
@@ -48,7 +47,11 @@ export default function RootLayout({
             </div>
         </main>
 
-        <div id="footer" className="relative bg-violet-950 h-header text-white">
+        <div id="footer" className="relative bg-violet-950 min-h-header text-white flex justify-center">
+            <div className="px-2  py-4">Design stránek: Šárka</div>
+            <div className="px-2 py-4" >©</div>
+            <div className="px-2 py-4">Realizace stránek: Martin </div>
+
         </div>
       </body>
     </html>

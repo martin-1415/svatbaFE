@@ -59,7 +59,7 @@ export default function Timeline() {
             <TimelineItem date={'2013'} text={'Odjíždí na stáž do nejlepšího jaderného ruského výzkumného centra Dubno obehnaného elektickým plotem.' +
                 ' Chtěli zjistit, zda je v tom opravdu elektrika, ale bylo jim líto tý kočky. '} imgUrl={'el.png'} sex={SexEnum.y}/>
 
-            <TimelineItem date={'2014'} text={'Na rok odjíždí na univerzitu v Manchesteru, kterému se tam přezdívá Gaychester.'} sex={SexEnum.y} imgUrl={'manch.jpg'}/>
+            <TimelineItem date={'2014'} text={'Na rok odjíždí na univerzitu v Manchesteru, kterému se tam přezdívá Gaychester. '} sex={SexEnum.y} imgUrl={'manch.jpg'}/>
 
             <TimelineItem date={'2014'} text={'15.10. se jí narodilo první "miminko", který ji posunulo život zase' +
                 ' jiným směrem a potkala zase nové zajímavé lidi. Začala s ním cvičit, chodit na obrany a jezdit po' +
