@@ -9,7 +9,7 @@ export default function Navigation() {
                 <BurgerMenu/>
             </div>
 
-            <div className="hidden relative p-2  md:text-2xl
+            <div className="hidden relative p-2  md:text-lg lg:text-2xl
                               sm:flex sm:flex-row sm:justify-evenly text-violet-900">
                 {/*text shaddow is not supported by tailwind*/}
                 {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
